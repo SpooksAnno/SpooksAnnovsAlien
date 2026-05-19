@@ -960,10 +960,6 @@ to_chat will check for valid clients itself already so no need to double check f
 	. = ..()
 	RegisterSignals(SSdcs, list(COMSIG_GLOB_SILOLESS_COLLAPSE), PROC_REF(setup_siloless_hud_timer))
 
-/datum/hive_status/normal/Destroy(force, ...)
-	. = ..()
-	UnregisterSignal(SSdcs, COMSIG_GLOB_SILOLESS_COLLAPSE)
-
 /datum/hive_status/normal/add_xeno(mob/living/carbon/xenomorph/X)
 	. = ..()
 	X.AddComponent(/datum/component/xeno_iff, CLF_IFF)
