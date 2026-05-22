@@ -2598,4 +2598,5 @@
 #include "modular_RUtgmc\include.dm"
 #include "modular_skyrat\include.dm"
 #include "ntf_modular\include.dm"
+#include "ntf_modular\code\_DEFINES\accessories.dm"
 // END_INCLUDE
