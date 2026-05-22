@@ -18,7 +18,12 @@
 	return SURGERY_CANNOT_USE
 
 /datum/surgery_step/head/peel
-	allowed_tools = SURGERY_TOOL_RETRACTING
+	allowed_tools = list(
+		/obj/item/tool/surgery/retractor = 100,
+		/obj/item/tool/crowbar = 75,
+		/obj/item/tool/kitchen/utensil/fork = 50,
+	)
+
 	min_duration = 30
 	max_duration = 40
 	reattach_step = 0
@@ -114,7 +119,13 @@
 
 
 /datum/surgery_step/head/prepare
-	allowed_tools = SURGERY_TOOL_CAUTERIZING
+	allowed_tools = list(
+		/obj/item/tool/surgery/cautery = 100,
+		/obj/item/clothing/mask/cigarette = 75,
+		/obj/item/tool/lighter = 50,
+		/obj/item/tool/weldingtool = 25,
+	)
+
 	min_duration = 60
 	max_duration = 80
 	reattach_step = 3

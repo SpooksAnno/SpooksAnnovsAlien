@@ -90,7 +90,6 @@
 
 /datum/outfit/New()
 	. = ..()
-	update_contents()
 	container_list["slot_in_back"] = backpack_contents
 	container_list["slot_in_belt"] = belt_contents
 	container_list["slot_in_boot"] = shoe_contents
@@ -99,10 +98,6 @@
 	container_list["slot_in_head"] = head_contents
 	container_list["slot_in_r_store"] = r_pocket_contents
 	container_list["slot_in_l_store"] = l_pocket_contents
-
-///Allows for additions to parent content lists as they cannot otherwise be added
-/datum/outfit/proc/update_contents()
-	return
 
 /// This gets ran before we equip any items from the variables
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

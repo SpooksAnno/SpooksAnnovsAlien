@@ -712,11 +712,6 @@
 
 	update_icon()
 
-/obj/structure/barricade/solid/capsule
-	name = "capsule-deployed metal barricade"
-	desc = parent_type::desc + " Deconstruction will yield less materials due to being deployed via capsule."
-	stack_amount = 3
-
 #undef BARRICADE_METAL_LOOSE
 #undef BARRICADE_METAL_ANCHORED
 #undef BARRICADE_METAL_FIRM
@@ -1010,11 +1005,6 @@
 			take_damage(rand(25, 75), BRUTE, BOMB)
 
 	update_icon()
-
-/obj/structure/barricade/folding/capsule
-	name = "capsule-deployed folding plasteel barricade"
-	desc = parent_type::desc + " Deconstruction will yield less materials due to being deployed via capsule."
-	stack_amount = 4
 
 #undef BARRICADE_PLASTEEL_LOOSE
 #undef BARRICADE_PLASTEEL_ANCHORED

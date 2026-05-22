@@ -22,7 +22,11 @@
 		return 1
 
 /datum/surgery_step/eye/cut_open
-	allowed_tools = SURGERY_TOOL_CUTTING
+	allowed_tools = list(
+		/obj/item/tool/surgery/scalpel = 100,
+		/obj/item/tool/kitchen/knife = 75,
+		/obj/item/shard = 50,
+	)
 
 	min_duration = EYE_CUT_MIN_DURATION
 	max_duration = EYE_CUT_MAX_DURATION
@@ -87,7 +91,12 @@
 	target.apply_damage(10, BRUTE, affected, updating_health = TRUE)
 
 /datum/surgery_step/eye/mend_eyes
-	allowed_tools = SURGERY_TOOL_CLAMPING
+	allowed_tools = list(
+		/obj/item/tool/surgery/hemostat = 100,
+		/obj/item/stack/cable_coil = 75,
+		/obj/item/assembly/mousetrap = 10,
+	)
+
 	min_duration = EYE_MEND_MIN_DURATION
 	max_duration = EYE_MEND_MAX_DURATION
 	eye_step = 2
@@ -116,7 +125,13 @@
 
 
 /datum/surgery_step/eye/cauterize
-	allowed_tools = SURGERY_TOOL_CAUTERIZING
+	allowed_tools = list(
+		/obj/item/tool/surgery/cautery = 100,
+		/obj/item/clothing/mask/cigarette = 75,
+		/obj/item/tool/lighter = 50,
+		/obj/item/tool/weldingtool = 25,
+	)
+
 	min_duration = EYE_CAUTERISE_MIN_DURATION
 	max_duration = EYE_CAUTERISE_MAX_DURATION
 	eye_step = 3

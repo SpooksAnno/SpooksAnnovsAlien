@@ -2597,13 +2597,6 @@
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window,
 /turf/open/floor/plating,
 /area/deltastation/command/heads_quarters/cmo)
-"aBL" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/plating,
-/area/deltastation/service/abandoned_gambling_den)
 "aBQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -4093,15 +4086,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/deltastation/maintenance/department/medical/morgue)
-"aSb" = (
-/obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/iron/dark,
-/area/deltastation/ai_monitored/turret_protected/ai)
 "aSd" = (
 /obj/structure/table/reinforced,
 /obj/item/packageWrap,
@@ -8766,8 +8750,12 @@
 /turf/open/floor/plating,
 /area/deltastation/maintenance/port)
 "bOt" = (
-/obj/docking_port/stationary/supplycolony,
-/turf/open/floor/mainship/empty,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm,
+/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "bOw" = (
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted,
@@ -10566,15 +10554,12 @@
 /turf/open/floor/iron,
 /area/deltastation/science/robotics/mechbay)
 "cim" = (
-/obj/structure/prop/mainship/railing{
-	dir = 4
-	},
-/obj/effect/urban/decal/dirt,
-/obj/effect/urban/decal/dirt,
-/obj/effect/urban/decal/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
+	dir = 1
+	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "cit" = (
@@ -17614,16 +17599,11 @@
 /turf/open/floor/plating,
 /area/deltastation/maintenance/department/medical/morgue)
 "dGa" = (
-/obj/effect/turf_decal/tile/transparent/neutral/half/contrasted{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
+/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
+	dir = 1
 	},
 /turf/open/floor/iron,
-/area/deltastation/maintenance/starboard/aft)
+/area/deltastation/cargo/warehouse)
 "dGd" = (
 /obj/effect/turf_decal/tile/transparent/neutral{
 	dir = 1
@@ -18917,10 +18897,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted,
 /obj/effect/landmark/weed_node,
-/obj/structure/prop/camera{
-	dir = 1;
-	name = "cargo camera"
-	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "dSz" = (
@@ -25580,10 +25556,6 @@
 /obj/effect/turf_decal/tile/transparent/brown/anticorner/contrasted{
 	dir = 8
 	},
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "fgk" = (
@@ -30534,9 +30506,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 6
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "gfv" = (
@@ -35060,7 +35029,6 @@
 	pixel_x = -3
 	},
 /obj/effect/spawner/random/misc/cigar,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/carpet,
 /area/deltastation/security/detectives_office)
 "hbc" = (
@@ -37729,10 +37697,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/iron/white,
 /area/deltastation/medical/virology)
 "hCP" = (
@@ -42524,10 +42488,6 @@
 "iFj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/weed_node,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/iron,
 /area/deltastation/maintenance/fore)
 "iFr" = (
@@ -45402,8 +45362,8 @@
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
 	dir = 8
 	},
-/obj/effect/landmark/weed_node,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/weed_node,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "jjD" = (
@@ -45568,9 +45528,6 @@
 "jkT" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 6
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
 	},
 /turf/open/floor/iron,
 /area/deltastation/engineering/atmos/hfr_room)
@@ -47498,10 +47455,6 @@
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
 /obj/machinery/holopad,
 /obj/effect/turf_decal/warning_stripes/box/empty,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
 /turf/open/floor/iron/dark,
 /area/deltastation/science/auxlab/firing_range)
 "jHU" = (
@@ -49132,7 +49085,6 @@
 "jYb" = (
 /obj/structure/table,
 /obj/effect/spawner/random/weaponry/gun/sidearms,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/plating,
 /area/deltastation/external/landingzone)
 "jYi" = (
@@ -52322,7 +52274,6 @@
 /obj/effect/spawner/random/misc/handcuffs,
 /obj/item/flash,
 /obj/effect/turf_decal/tile/transparent/red/fourcorners,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/iron/dark,
 /area/deltastation/security/office)
 "kHb" = (
@@ -54170,9 +54121,6 @@
 "lbL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted,
-/obj/machinery/air_alarm{
-	dir = 1
-	},
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "lbP" = (
@@ -54246,10 +54194,6 @@
 "lcI" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/transparent/red/anticorner/contrasted,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 1;
-	pixel_y = -28
-	},
 /turf/open/floor/iron/dark,
 /area/deltastation/security/checkpoint)
 "lcQ" = (
@@ -55504,9 +55448,7 @@
 /area/deltastation/engineering/atmos/pumproom)
 "lpI" = (
 /obj/structure/table,
-/obj/machinery/computer/security{
-	dir = 8
-	},
+/obj/machinery/computer/security,
 /turf/open/floor/tile/dark,
 /area/deltastation/external/landingzone)
 "lpM" = (
@@ -55665,9 +55607,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
 	},
 /turf/open/floor/iron/white,
 /area/deltastation/science/research)
@@ -61058,7 +60997,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/firealarm,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "mvY" = (
@@ -69400,16 +69338,6 @@
 /obj/machinery/light,
 /turf/open/floor/iron,
 /area/deltastation/asteroidcaves/ship)
-"ojl" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/spawner/random/misc/plant,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/iron,
-/area/deltastation/engineering/supermatter/room)
 "ojn" = (
 /obj/effect/spawner/random/misc/plant,
 /obj/effect/spawner/random/machinery/status_display{
@@ -71439,11 +71367,11 @@
 /area/deltastation/maintenance/port/aft)
 "oEw" = (
 /obj/effect/turf_decal/warning_stripes/box/empty,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment/corner{
 	dir = 1
 	},
 /obj/effect/ai_node,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "oEA" = (
@@ -76148,7 +76076,6 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/iron,
 /area/deltastation/security/prison)
 "pBX" = (
@@ -84573,19 +84500,6 @@
 /obj/effect/spawner/random/misc/structure/directional_window/north,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/deltastation/asteroidcaves/westerncaves/garbledradio)
-"rjZ" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/plating,
-/area/deltastation/maintenance/department/science)
 "rkb" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
@@ -87180,9 +87094,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/iron,
 /area/deltastation/engineering/atmos)
 "rKz" = (
@@ -89226,10 +89137,6 @@
 "sic" = (
 /obj/effect/mapping_helpers/simple_pipes/dark/visible,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/iron,
 /area/deltastation/maintenance/disposal/incinerator)
 "sif" = (
@@ -93447,10 +93354,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/iron,
 /area/deltastation/engineering/storage_shared)
 "sZv" = (
@@ -101578,14 +101481,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/iron,
 /area/deltastation/security/office)
-"uGk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/iron,
-/area/deltastation/science/research/abandoned)
 "uGp" = (
 /obj/machinery/newscaster{
 	dir = 4
@@ -105421,10 +105316,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/plating,
 /area/deltastation/maintenance/disposal)
 "vrV" = (
@@ -114075,7 +113966,6 @@
 "xcT" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/random/misc/clipboard,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/wood,
 /area/deltastation/service/electronic_marketing_den)
 "xdd" = (
@@ -115454,7 +115344,18 @@
 /turf/open/floor/asteroidfloor,
 /area/deltastation/external/landingzone)
 "xqQ" = (
-/turf/open/floor/mainship/empty,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/air_alarm,
+/obj/structure/prop/camera{
+	name = "cargo camera"
+	},
+/obj/effect/turf_decal/tile/transparent/brown/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "xqV" = (
 /obj/effect/spawner/random/engineering/cable,
@@ -120057,7 +119958,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/computer/supplycomp/colony,
 /turf/open/floor/iron,
 /area/deltastation/cargo/warehouse)
 "yjJ" = (
@@ -128131,7 +128031,7 @@ ybi
 xvN
 wlI
 dAN
-aSb
+xvN
 iXV
 ckX
 kCc
@@ -143826,7 +143726,7 @@ fgA
 klt
 wyI
 sIj
-ojl
+fEO
 vBD
 akg
 vBD
@@ -144382,7 +144282,7 @@ nro
 hlX
 uFU
 ykX
-aBL
+ttn
 wgD
 rjb
 qwW
@@ -146684,7 +146584,7 @@ pZK
 vzL
 oZP
 oZP
-rjZ
+lPR
 ltx
 cER
 hof
@@ -147463,7 +147363,7 @@ oRa
 lCL
 ccV
 tjc
-uGk
+fiQ
 jZh
 iam
 wxu
@@ -162784,7 +162684,7 @@ ekc
 iOf
 syB
 aUf
-xqQ
+dGa
 ibR
 orC
 fUf
@@ -172643,7 +172543,7 @@ yfN
 sEy
 fsK
 sEy
-dGa
+sEy
 yfN
 kvF
 ibB

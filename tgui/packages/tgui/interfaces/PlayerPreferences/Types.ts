@@ -21,8 +21,6 @@ type CharacterCustomizationData = {
   r_eyes: number;
   g_eyes: number;
   b_eyes: number;
-  hair_emissive: boolean;
-  eye_emissive: boolean;
   tail: string;
   tail_color: string;
   tail_color_secondary: string;
@@ -45,7 +43,6 @@ type CharacterCustomizationData = {
   wings_color_tertiary: string;
   digitigrade_legs: string;
   body_color: string;
-  blood_color: string;
   allow_mismatched_parts: boolean;
   use_genital_size_controls: boolean;
   allow_emissives: boolean;

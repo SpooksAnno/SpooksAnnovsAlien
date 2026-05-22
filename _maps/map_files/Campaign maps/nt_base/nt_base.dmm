@@ -468,14 +468,10 @@
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/fitness)
 "arM" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
+/obj/structure/rack/nometal,
+/obj/item/clothing/under/colonist,
+/turf/open/floor/prison/whitepurple/full{
 	dir = 4
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 1
 	},
 /area/gelida/indoors/a_block/dorms)
 "ast" = (
@@ -916,11 +912,16 @@
 /turf/open/floor/plating/heatinggrate,
 /area/gelida/indoors/b_block/hydro)
 "aLv" = (
+/obj/machinery/light{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
+	dir = 6
 	},
 /obj/effect/ai_node,
-/turf/open/floor/prison/darkpurple,
+/turf/open/floor/prison/whitepurple/full{
+	dir = 4
+	},
 /area/gelida/indoors/a_block/dorms)
 "aLN" = (
 /obj/machinery/door/airlock/mainship/generic{
@@ -1116,11 +1117,11 @@
 	},
 /area/gelida/outdoors/colony_streets/north_east_street)
 "aSG" = (
-/obj/machinery/atmospherics/pipe/manifold4w/green/hidden,
-/turf/open/floor/prison/darkpurple{
+/obj/structure/platform_decoration{
 	dir = 8
 	},
-/area/gelida/indoors/a_block/dorms)
+/turf/open/floor/plating/ground/desertdam/asphalt/cement,
+/area/gelida/outdoors/colony_streets/central_streets)
 "aSI" = (
 /obj/structure/prop/mainship/gelida/smallwire,
 /obj/structure/prop/mainship/gelida/smallwire{
@@ -1217,6 +1218,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/mining)
+"aXd" = (
+/obj/item/shard,
+/obj/effect/ai_node,
+/turf/open/floor/plating/ground/snow/layer0,
+/area/gelida/outdoors/colony_streets/central_streets)
 "aXn" = (
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
 	dir = 4
@@ -2470,13 +2476,10 @@
 /turf/open/floor/plating/ground/snow/layer1,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "bQz" = (
-/obj/structure/closet,
 /obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/prison/whitepurple/full{
 	dir = 4
 	},
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "bQE" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -3492,12 +3495,13 @@
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/indoors/a_block/fitness)
 "cGd" = (
-/obj/machinery/atmospherics/pipe/manifold/green/hidden{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
 	},
-/obj/effect/ai_node,
-/turf/open/floor/prison/darkpurple{
-	dir = 1
+/obj/effect/landmark/corpsespawner/scientist,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/prison/whitepurple/full{
+	dir = 4
 	},
 /area/gelida/indoors/a_block/dorms)
 "cGr" = (
@@ -3875,13 +3879,6 @@
 	dir = 5
 	},
 /area/gelida/outdoors/colony_streets/north_west_street)
-"cTg" = (
-/obj/structure/bed/chair/comfy,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "cTh" = (
 /obj/structure/bookcase{
 	pixel_y = 16
@@ -4405,13 +4402,11 @@
 /turf/open/floor/prison/sterilewhite,
 /area/gelida/indoors/a_block/corpo)
 "dme" = (
-/obj/machinery/processor{
-	pixel_y = 5
+/obj/structure/toilet{
+	pixel_y = 16
 	},
-/obj/machinery/light/mainship{
-	dir = 8
-	},
-/turf/open/floor/iron/kitchen,
+/obj/effect/ai_node,
+/turf/open/floor/freezer,
 /area/gelida/indoors/a_block/dorms)
 "dmn" = (
 /obj/machinery/door/airlock/multi_tile/mainship/generic{
@@ -4942,11 +4937,14 @@
 	},
 /area/gelida/indoors/b_block/bridge)
 "dGC" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 10
+/obj/structure/rack/nometal,
+/obj/item/clothing/under/colonist,
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/effect/ai_node,
-/turf/open/floor/prison,
+/turf/open/floor/prison/whitepurple/full{
+	dir = 4
+	},
 /area/gelida/indoors/a_block/dorms)
 "dGG" = (
 /obj/structure/sink{
@@ -4991,12 +4989,6 @@
 /obj/machinery/seed_extractor,
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/indoors/b_block/hydro)
-"dHL" = (
-/obj/machinery/atmospherics/pipe/manifold/green/hidden{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "dII" = (
 /obj/structure/cargo_container,
 /turf/open/floor/prison/cleanmarked,
@@ -5484,10 +5476,6 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/obj/machinery/door/airlock/mainship/generic{
-	dir = 8;
-	name = "\improper Dormitories"
-	},
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/dorms)
 "dYO" = (
@@ -5505,7 +5493,10 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
 "dZy" = (
-/turf/open/floor/wood,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 10
+	},
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "dZF" = (
 /obj/structure/cable,
@@ -5773,13 +5764,6 @@
 	dir = 4
 	},
 /area/gelida/landing_zone_forecon/landing_zone_4)
-"enY" = (
-/obj/structure/bed/chair/comfy{
-	dir = 1
-	},
-/obj/machinery/light,
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "eoh" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/reagent_containers/glass/beaker,
@@ -5851,12 +5835,6 @@
 	},
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/south_east_street)
-"epB" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 6
-	},
-/turf/open/floor/prison,
-/area/gelida/indoors/a_block/dorms)
 "epF" = (
 /obj/structure/platform_decoration{
 	dir = 4
@@ -6097,11 +6075,6 @@
 	},
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/mining)
-"evV" = (
-/obj/machinery/chem_dispenser/beer,
-/obj/structure/table/mainship,
-/turf/open/floor/iron/kitchen,
-/area/gelida/indoors/a_block/dorms)
 "evW" = (
 /obj/structure/table/mainship,
 /obj/machinery/prop/computer/PC{
@@ -6153,9 +6126,9 @@
 /area/gelida/landing_zone_2)
 "eyF" = (
 /obj/structure/bed/chair/comfy{
-	dir = 1
+	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plating/plating_catwalk/prison,
 /area/gelida/indoors/a_block/dorms)
 "eyO" = (
 /obj/effect/spawner/gibspawner/xeno,
@@ -6245,12 +6218,6 @@
 	dir = 4
 	},
 /area/gelida/indoors/b_block/bridge)
-"eBu" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 10
-	},
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "eBR" = (
 /obj/effect/spawner/random/misc/folder/nooffset{
 	pixel_x = -9;
@@ -6557,10 +6524,11 @@
 /turf/open/floor/prison/plate,
 /area/gelida/indoors/a_block/hallway)
 "eKY" = (
-/obj/effect/ai_node,
-/turf/open/floor/prison/darkpurple{
-	dir = 4
+/obj/structure/table/mainship,
+/obj/item/trash/plate{
+	pixel_y = 8
 	},
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "eLc" = (
 /obj/structure/inflatable/wall{
@@ -6656,12 +6624,8 @@
 /turf/open/floor/prison,
 /area/gelida/cavestructuretwo)
 "eOo" = (
-/obj/machinery/atmospherics/pipe/manifold/green/hidden{
-	dir = 8
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/green/hidden,
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "eOu" = (
 /obj/machinery/floodlight,
@@ -6670,10 +6634,9 @@
 	},
 /area/gelida/indoors/lone_buildings/storage_blocks)
 "eOG" = (
-/obj/structure/bed/chair/comfy,
-/turf/open/floor/prison/darkpurple{
-	dir = 1
-	},
+/obj/item/shard,
+/obj/structure/window_frame/colony,
+/turf/open/floor/plating,
 /area/gelida/indoors/a_block/dorms)
 "eOV" = (
 /obj/structure/stairs/corner_seamless{
@@ -6700,10 +6663,6 @@
 	},
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/north_east_street)
-"eQb" = (
-/obj/structure/table/mainship,
-/turf/open/floor/iron/kitchen,
-/area/gelida/indoors/a_block/dorms)
 "eQj" = (
 /obj/structure/table/mainship,
 /obj/item/circuitboard/apc,
@@ -6988,10 +6947,10 @@
 /area/gelida/indoors/a_block/admin)
 "eYs" = (
 /obj/structure/bed/chair/comfy{
-	dir = 1
+	dir = 8
 	},
-/obj/machinery/light,
-/turf/open/floor/prison/darkpurple,
+/obj/effect/ai_node,
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "eYt" = (
 /obj/structure/platform_decoration{
@@ -7224,11 +7183,11 @@
 /turf/open/floor/prison/cleanmarked,
 /area/gelida/landing_zone_forecon/landing_zone_4)
 "fhm" = (
-/obj/machinery/atmospherics/pipe/manifold/green/hidden{
-	dir = 8
+/obj/structure/table/mainship,
+/obj/item/camera,
+/turf/open/floor/prison/whitepurple/full{
+	dir = 4
 	},
-/obj/effect/ai_node,
-/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "fhC" = (
 /obj/effect/spawner/random/misc/folder/nooffset{
@@ -7995,10 +7954,6 @@
 /obj/structure/table/mainship,
 /turf/open/floor/prison/whitegreenfull2,
 /area/gelida/cavestructuretwo)
-"fTN" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
-/turf/open/floor/iron/kitchen,
-/area/gelida/indoors/a_block/dorms)
 "fUc" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/plating_catwalk/prison,
@@ -8252,12 +8207,6 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/gelida/outdoors/colony_streets/east_central_street)
-"gcE" = (
-/obj/machinery/atmospherics/pipe/manifold/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating/plating_catwalk/prison,
-/area/gelida/indoors/a_block/dorms)
 "gcX" = (
 /obj/structure/table/mainship,
 /obj/item/armor_module/module/antenna,
@@ -8566,15 +8515,6 @@
 "gnX" = (
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/outdoors/w_rockies)
-"gog" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 5
-	},
-/obj/structure/bed/chair/comfy{
-	dir = 8
-	},
-/turf/open/floor/prison,
-/area/gelida/indoors/a_block/dorms)
 "gon" = (
 /obj/structure/bed/chair/comfy{
 	dir = 8
@@ -8594,17 +8534,6 @@
 /obj/docking_port/stationary/crashmode,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/outdoors/colony_streets/south_street)
-"goU" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/bed/chair/comfy{
-	dir = 4
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 8
-	},
-/area/gelida/indoors/a_block/dorms)
 "goV" = (
 /obj/structure/cargo_container/gorg,
 /turf/open/floor/prison/plate,
@@ -8646,14 +8575,9 @@
 /turf/open/floor/prison,
 /area/gelida/cavestructuretwo)
 "gqE" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/prison/darkpurple{
-	dir = 1
-	},
-/area/gelida/indoors/a_block/dorms)
+/obj/structure/platform_decoration,
+/turf/open/floor/plating/ground/desertdam/asphalt/cement,
+/area/gelida/outdoors/colony_streets/central_streets)
 "gqI" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 5
@@ -9802,12 +9726,11 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/mining)
 "hjh" = (
-/obj/structure/bed/chair/comfy{
-	dir = 4
-	},
-/turf/open/floor/prison/darkpurple{
+/obj/machinery/light{
 	dir = 8
 	},
+/obj/effect/ai_node,
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "hjt" = (
 /obj/item/reagent_containers/food/drinks/coffee{
@@ -10205,13 +10128,6 @@
 /obj/structure/inflatable/wall,
 /turf/open/shuttle/dropship/eight,
 /area/gelida/landing_zone_forecon/UD6_Tornado)
-"hzl" = (
-/obj/machinery/reagentgrinder{
-	pixel_y = 5
-	},
-/obj/structure/table/mainship,
-/turf/open/floor/iron/kitchen,
-/area/gelida/indoors/a_block/dorms)
 "hzn" = (
 /obj/structure/bed/chair/comfy{
 	dir = 4
@@ -10397,11 +10313,6 @@
 	},
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
-"hFo" = (
-/obj/machinery/chem_dispenser/soda,
-/obj/structure/table/mainship,
-/turf/open/floor/iron/kitchen,
-/area/gelida/indoors/a_block/dorms)
 "hFv" = (
 /turf/closed/shuttle/dropship2/engine_sidealt,
 /area/gelida/landing_zone_forecon/UD6_Tornado)
@@ -10674,6 +10585,12 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/mining)
 "hSz" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 10
+	},
 /turf/open/floor/freezer,
 /area/gelida/indoors/a_block/dorms)
 "hSO" = (
@@ -11209,7 +11126,9 @@
 	dir = 8;
 	pixel_x = -11
 	},
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 5
+	},
 /turf/open/floor/freezer,
 /area/gelida/indoors/a_block/dorms)
 "ijt" = (
@@ -11426,12 +11345,6 @@
 	dir = 4
 	},
 /area/gelida/landing_zone_forecon/UD6_Tornado)
-"irM" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "irN" = (
 /obj/item/stack/rods,
 /obj/structure/window_frame/colony,
@@ -11721,10 +11634,6 @@
 /obj/structure/table/mainship,
 /turf/open/floor/prison,
 /area/lv624/lazarus/console)
-"iCT" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "iDj" = (
 /obj/effect/turf_decal/warning_stripes/thick/corner{
 	dir = 8
@@ -13763,15 +13672,6 @@
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/executive)
-"kfG" = (
-/obj/machinery/microwave,
-/obj/item/storage/box/donkpockets{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/structure/table/mainship,
-/turf/open/floor/iron/kitchen,
-/area/gelida/indoors/a_block/dorms)
 "kfK" = (
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/bridges/op_centre)
@@ -13810,12 +13710,11 @@
 /turf/open/floor/mainship/black/full,
 /area/gelida/powergen)
 "khq" = (
-/obj/structure/table/mainship,
-/obj/item/trash/plate,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
+/obj/machinery/door/airlock/multi_tile/mainship/generic{
+	dir = 1;
+	name = "\improper Family Dormitories"
 	},
-/turf/open/floor/prison,
+/turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/dorms)
 "kht" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -13942,13 +13841,6 @@
 	},
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/south_east_street)
-"knk" = (
-/obj/effect/ai_node,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 6
-	},
-/turf/open/floor/prison,
-/area/gelida/indoors/a_block/dorms)
 "knI" = (
 /obj/effect/turf_decal/warning_stripes/thin{
 	dir = 1
@@ -14066,7 +13958,8 @@
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/b_block/hydro)
 "krA" = (
-/turf/open/floor/iron/kitchen,
+/obj/effect/spawner/random/misc/structure/curtain,
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "krK" = (
 /obj/structure/fence,
@@ -14153,10 +14046,10 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/c_block/mining)
 "kwo" = (
-/obj/effect/ai_node,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
+	dir = 9
 	},
+/obj/effect/ai_node,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "kwz" = (
@@ -14784,9 +14677,10 @@
 /turf/open/floor/plating,
 /area/gelida/indoors/c_block/cargo)
 "kTs" = (
-/turf/open/floor/prison/darkpurple{
-	dir = 10
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 1
 	},
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "kTF" = (
 /obj/structure/prop/mainship/gelida/smallwire{
@@ -17390,10 +17284,6 @@
 	},
 /turf/open/floor/plating,
 /area/gelida/indoors/a_block/bridges/dorms_fitness)
-"mLc" = (
-/obj/machinery/atmospherics/pipe/manifold/green/hidden,
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "mLe" = (
 /obj/structure/window_frame/colony,
 /obj/structure/platform{
@@ -17932,16 +17822,6 @@
 /obj/structure/cable,
 /turf/open/floor/tile/yellow/patch,
 /area/gelida/indoors/a_block/corpo)
-"nfe" = (
-/obj/structure/table/mainship,
-/obj/item/trash/plate,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/turf/open/floor/prison/whitepurple/full{
-	dir = 4
-	},
-/area/gelida/indoors/a_block/dorms)
 "nfh" = (
 /obj/structure/closet/bodybag,
 /obj/effect/spawner/random/misc/structure/curtain/medical,
@@ -19393,10 +19273,14 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/landing_zone_1)
 "ogi" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
+/obj/structure/table/mainship,
+/obj/machinery/computer/station_alert{
+	dir = 4;
+	pixel_x = -3
+	},
+/turf/open/floor/prison/whitepurple/full{
 	dir = 4
 	},
-/turf/open/floor/prison/darkpurple,
 /area/gelida/indoors/a_block/dorms)
 "ogl" = (
 /obj/structure/cable,
@@ -19850,7 +19734,6 @@
 "oAT" = (
 /obj/effect/decal/cleanable/vomit,
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/effect/ai_node,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "oAV" = (
@@ -20781,13 +20664,6 @@
 	dir = 9
 	},
 /area/gelida/indoors/a_block/dorm_north)
-"pee" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/ai_node,
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "peg" = (
 /obj/item/clothing/head/hardhat,
 /turf/open/floor/plating/ground/snow/layer0,
@@ -23087,12 +22963,11 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/cargo)
 "qNv" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 8
+/obj/structure/platform_decoration{
+	dir = 1
 	},
-/obj/effect/ai_node,
 /turf/open/floor/prison,
-/area/gelida/indoors/a_block/dorms)
+/area/gelida/outdoors/colony_streets/central_streets)
 "qNz" = (
 /obj/item/stack/rods,
 /turf/open/floor/prison,
@@ -23958,15 +23833,6 @@
 	dir = 9
 	},
 /area/gelida/indoors/b_block/bridge)
-"roK" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/bed/chair/comfy,
-/turf/open/floor/prison/darkpurple{
-	dir = 1
-	},
-/area/gelida/indoors/a_block/dorms)
 "roX" = (
 /obj/machinery/light,
 /obj/structure/cable,
@@ -24587,10 +24453,7 @@
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/north_west_street)
 "rPt" = (
-/obj/effect/decal/cleanable/vomit,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 9
-	},
+/obj/effect/spawner/random/misc/structure/chair_or_metal/east,
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "rPS" = (
@@ -24722,13 +24585,13 @@
 	},
 /area/gelida/indoors/a_block/admin)
 "rVJ" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
+/obj/structure/rack/nometal,
+/obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy{
-	dir = 8
+/turf/open/floor/prison/whitepurple/full{
+	dir = 4
 	},
-/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "rVO" = (
 /obj/structure/barricade/wooden{
@@ -25014,15 +24877,6 @@
 /obj/effect/spawner/random/misc/structure/barrel,
 /turf/open/floor/prison/plate,
 /area/gelida/indoors/lone_buildings/storage_blocks)
-"sgT" = (
-/obj/effect/landmark/corpsespawner/scientist,
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 1
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 4
-	},
-/area/gelida/indoors/a_block/dorms)
 "shk" = (
 /obj/structure/table/mainship,
 /obj/effect/spawner/random/weaponry/gun/sidearms,
@@ -26845,12 +26699,6 @@
 	},
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/indoors/a_block/dorms)
-"tvs" = (
-/obj/structure/bed/chair/comfy{
-	dir = 8
-	},
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "tvB" = (
 /obj/machinery/light{
 	dir = 4
@@ -27021,14 +26869,6 @@
 /obj/item/stack/rods,
 /turf/open/floor/prison/darkred/full,
 /area/gelida/indoors/a_block/kitchen)
-"tAK" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 1
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 4
-	},
-/area/gelida/indoors/a_block/dorms)
 "tAY" = (
 /obj/structure/table/mainship,
 /obj/item/reagent_containers/food/snacks/sandwiches/bread{
@@ -27196,11 +27036,10 @@
 	},
 /area/gelida/indoors/b_block/bridge)
 "tIi" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/turf/open/floor/prison/whitepurple/full{
 	dir = 4
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 1
 	},
 /area/gelida/indoors/a_block/dorms)
 "tIv" = (
@@ -27341,21 +27180,16 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/c_block/mining)
 "tNZ" = (
-/obj/structure/bed/chair/comfy{
-	dir = 1
+/obj/effect/decal/cleanable/vomit,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	dir = 4
 	},
-/turf/open/floor/prison/darkpurple,
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "tOc" = (
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/floor/plating/ground/ice,
 /area/gelida/caves/east_caves/garbledradio)
-"tOV" = (
-/obj/effect/landmark/corpsespawner/scientist,
-/turf/open/floor/prison/darkpurple{
-	dir = 4
-	},
-/area/gelida/indoors/a_block/dorms)
 "tOY" = (
 /obj/structure/table/mainship,
 /obj/item/clothing/gloves/botanic_leather,
@@ -27451,9 +27285,13 @@
 /turf/open/floor/prison,
 /area/gelida/indoors/a_block/admin)
 "tTp" = (
-/obj/structure/table/wood,
-/obj/item/trash/plate,
-/turf/open/floor/wood,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/turf/open/floor/prison/whitepurple/full{
+	dir = 4
+	},
 /area/gelida/indoors/a_block/dorms)
 "tTr" = (
 /obj/effect/turf_decal/warning_stripes/thin{
@@ -28477,14 +28315,6 @@
 	},
 /turf/open/floor/prison,
 /area/gelida/outdoors/colony_streets/south_east_street)
-"uHO" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/effect/landmark/corpsespawner/scientist,
-/obj/machinery/light,
-/turf/open/floor/prison/darkpurple,
-/area/gelida/indoors/a_block/dorms)
 "uHR" = (
 /obj/structure/sink{
 	dir = 4;
@@ -29136,13 +28966,6 @@
 /obj/effect/turf_decal/warning_stripes/thick,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/gelida/landing_zone_1)
-"vgR" = (
-/obj/structure/bed/chair/comfy{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "vgZ" = (
 /obj/structure/platform{
 	dir = 9
@@ -29557,13 +29380,6 @@
 /obj/vehicle/train/cargo/trolley,
 /turf/open/floor/prison/cleanmarked,
 /area/gelida/indoors/lone_buildings/storage_blocks)
-"vwA" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/bed/chair/comfy,
-/turf/open/floor/wood,
-/area/gelida/indoors/a_block/dorms)
 "vwB" = (
 /obj/structure/platform_decoration{
 	dir = 8
@@ -30136,13 +29952,6 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/stripesquare,
 /area/gelida/powergen)
-"vRA" = (
-/obj/effect/ai_node,
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 9
-	},
-/turf/open/floor/prison,
-/area/gelida/indoors/a_block/dorms)
 "vSd" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/snow/layer0,
@@ -30443,14 +30252,6 @@
 	},
 /turf/open/floor/plating/ground/desertdam/asphalt/cement,
 /area/gelida/outdoors/colony_streets/north_west_street)
-"wdI" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
-	dir = 4
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 10
-	},
-/area/gelida/indoors/a_block/dorms)
 "wdR" = (
 /turf/open/floor/plating/heatinggrate,
 /area/gelida/indoors/a_block/bridges/dorms_fitness)
@@ -30510,10 +30311,13 @@
 /turf/open/floor/prison/darkbrown/full,
 /area/gelida/indoors/c_block/cargo)
 "wgZ" = (
+/obj/structure/bed/chair/comfy{
+	dir = 1
+	},
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
-/turf/closed/wall,
+/turf/open/floor/prison,
 /area/gelida/indoors/a_block/dorms)
 "wha" = (
 /obj/machinery/light{
@@ -41047,7 +40851,7 @@ vIE
 xlV
 fcp
 hoS
-oPt
+aXd
 oPt
 vaN
 vSd
@@ -41259,21 +41063,21 @@ sSY
 sSY
 vwB
 uxt
-dAg
+cpg
 rum
-chk
-vUk
-jjD
-lMo
-bfK
-pWW
-yfp
-yfp
-oAr
-oAr
-oAr
-oAr
-yfp
+vIE
+qjO
+vIE
+vIE
+vIE
+vPN
+eOG
+gqE
+bZn
+bZn
+bZn
+bZn
+aSG
 yfp
 yfp
 qGg
@@ -41481,22 +41285,22 @@ oAr
 oAr
 yfp
 yfp
-yfp
-yfp
-yfp
-pAx
-dOS
-yfp
-yfp
-yfp
-yfp
-dbf
+dAg
 xlV
-qGg
-xlV
-fqs
-pzF
-uxt
+chk
+vUk
+jjD
+lMo
+bfK
+pWW
+yfp
+yfp
+oAr
+oAr
+oAr
+oAr
+yfp
+yfp
 xPh
 tkC
 gpd
@@ -41702,25 +41506,25 @@ qIQ
 gyo
 gyo
 vyS
+yfp
+yfp
+yfp
+yfp
+pAx
+dOS
+yfp
+yfp
+yfp
+yfp
+dbf
 xlV
-uxt
-etw
-aoZ
-qjO
-ylS
-hRI
-xlV
-uxt
-xlV
-pEB
-epB
-gcE
-jLi
-oAT
-vqV
-mmF
-vqV
-bxz
+qGg
+ueD
+iOR
+pYe
+yfp
+atZ
+wgZ
 vIE
 jPy
 sWl
@@ -41923,23 +41727,23 @@ vIE
 vIE
 vIE
 vIE
-vIE
-knk
-riu
-vqV
-vqV
-jRa
-vqV
-dtq
-vqV
-riu
+xlV
+xlV
+uxt
+etw
+aoZ
+qjO
+ylS
+hRI
+xlV
+uxt
 fhm
-vqV
-rPt
-vIE
-mGH
-vIE
 gyo
+vIE
+tNZ
+vIE
+vIE
+xlV
 uxt
 hkO
 uhI
@@ -41948,7 +41752,7 @@ vIE
 mQd
 vIE
 stq
-pkK
+yfp
 wQe
 gHP
 vaN
@@ -42146,31 +41950,31 @@ jLi
 dZI
 vqV
 vqV
-vRA
-uxt
-xlV
-uGJ
-qjO
-vIE
-taP
-xlV
-uxt
-tkC
-gyo
-oQw
-gyo
-kQj
-uFH
-eQj
-yfp
-atZ
+dtq
+riu
+vqV
+vqV
+jRa
+vqV
+dtq
+vqV
+riu
+vqV
+vqV
+vqV
+cTW
+jLi
+oAT
+vqV
+mmF
+vqV
 kwo
 xmr
-dYx
+xmr
 vIE
 ylS
 xlV
-mfl
+pkK
 hoS
 gVv
 nQX
@@ -42369,30 +42173,30 @@ vIE
 vIE
 vIE
 gyo
-yfp
-yfp
+uxt
+xlV
 uGJ
 qjO
 vIE
 taP
-yfp
-yfp
-gOR
-yfp
-yfp
-yfp
-yfp
-yfp
-yfp
-yfp
-yfp
-gOR
-yfp
-yfp
-yfp
-yfp
-yfp
-yfp
+xlV
+uxt
+xlV
+vIE
+mGH
+vIE
+mGH
+vIE
+gyo
+uxt
+gyo
+iff
+vIE
+vIE
+vIE
+iff
+gyo
+mfl
 maw
 gVv
 xYQ
@@ -42592,28 +42396,28 @@ xlV
 gyo
 hkO
 yfp
-gcX
+yfp
 xRc
 qjO
 vIE
 taP
-xlV
 yfp
-tIi
-lIA
-lIA
-lIA
-lIA
-lIA
-lIA
 yfp
-pBL
-tIi
-lIA
-lIA
-lIA
-lIA
-lIA
+fqs
+pzF
+oQw
+gyo
+kQj
+uFH
+eQj
+yfp
+wcc
+sZV
+bHD
+lIG
+xBL
+sZV
+wcc
 yfp
 bfA
 gVv
@@ -42821,21 +42625,21 @@ jLi
 qUp
 aNg
 yfp
-gqE
-lRV
-lRV
-lRV
-lRV
-lRV
-wdI
 yfp
-pBL
-gqE
-lRV
-lRV
-lRV
-lRV
-kTs
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
+yfp
 yfp
 hoS
 gVv
@@ -43043,21 +42847,21 @@ xmr
 taP
 iHo
 yfp
-arM
+wKI
 pBL
-pBL
-pBL
-pBL
-pBL
-uHO
 yfp
-bQz
-tIi
+wKI
 pBL
+yfp
+wKI
 pBL
+yfp
+wKI
 pBL
+yfp
 pBL
-raW
+gyo
+ogi
 yfp
 hoS
 gVv
@@ -43265,21 +43069,21 @@ xmr
 taP
 jpY
 yfp
-cGd
-tAK
-tOV
-jXZ
-jXZ
-jXZ
-aLv
-yfp
+tkC
 pBL
+yfp
 cGd
-sgT
-jXZ
-jXZ
-eKY
-xAf
+pBL
+yfp
+tkC
+pBL
+yfp
+tkC
+pBL
+yfp
+aLv
+kTs
+sWl
 csw
 hoS
 gVv
@@ -43487,21 +43291,21 @@ vIE
 raW
 yfp
 yfp
-tIi
+tkC
 lIA
-lIA
-lIA
-lIA
-lIA
-ogi
 yfp
-pBL
+tkC
+lIA
+yfp
+tkC
+lIA
+yfp
+tkC
+lIA
+yfp
+tkC
+xlV
 tIi
-lIA
-lIA
-lIA
-lIA
-lIA
 yfp
 maw
 gVv
@@ -43712,16 +43516,16 @@ yfp
 gOR
 yfp
 yfp
-yfp
-yfp
-yfp
 gOR
 yfp
 yfp
 gOR
 yfp
 yfp
+gOR
 yfp
+yfp
+gOR
 yfp
 yfp
 yfp
@@ -43934,16 +43738,16 @@ yfp
 ybx
 etw
 etw
-aoZ
-etw
-etw
+uhI
+hRI
+xlV
 uhI
 bfK
 hXC
 uhI
 hRI
 xlV
-tkC
+uhI
 xlV
 xLa
 yfp
@@ -44165,7 +43969,7 @@ veR
 vxj
 veR
 veR
-aSG
+eOo
 sZF
 xlV
 gwY
@@ -44375,16 +44179,16 @@ vIE
 ylS
 vIE
 eow
-eKY
+jXZ
 kpt
 jXZ
 jrU
 ilZ
 jXZ
-eKY
 jXZ
 jXZ
-eKY
+jXZ
+jXZ
 jXZ
 xmr
 jrU
@@ -44823,7 +44627,7 @@ yfp
 yfp
 yfp
 dYI
-yfp
+khq
 yfp
 yfp
 yfp
@@ -45041,14 +44845,14 @@ xmr
 ciW
 yfp
 yfp
-hzl
-dme
-fTN
-eBu
-dHL
-vgR
-vgR
-irM
+lIA
+xlV
+jNG
+uhI
+vIE
+pBL
+pBL
+pBL
 yfp
 gQV
 gQV
@@ -45263,14 +45067,14 @@ xmr
 vyH
 xVo
 yfp
-hFo
-krA
+ehe
+xmr
 krA
 dZy
-cTg
-tTp
-tTp
-eyF
+iMh
+vqV
+vqV
+aNg
 yfp
 fWc
 dia
@@ -45485,14 +45289,14 @@ rum
 vyH
 pOA
 yfp
-evV
-kfG
-eQb
-dZy
-vwA
-tTp
-tTp
-enY
+xlV
+wRA
+jNG
+pEB
+uhI
+eyF
+iff
+xlV
 yfp
 sWl
 jPy
@@ -45710,11 +45514,11 @@ yfp
 yfp
 yfp
 yfp
-pee
-vwA
-tTp
-tTp
-eyF
+hrB
+qIU
+icP
+eKY
+stq
 yfp
 xrH
 gmV
@@ -45931,12 +45735,12 @@ yfp
 yfp
 acn
 ijo
-uJO
-iCT
-mLc
-tvs
-tvs
-dZy
+yfp
+oIP
+uhI
+iXr
+iXr
+xlV
 yfp
 ehe
 xmr
@@ -46151,14 +45955,14 @@ vIE
 pkM
 uNc
 yfp
-mIS
+dme
 hSz
-yfp
-yfp
-wgZ
-yfp
-yfp
-yfp
+uJO
+tTp
+juG
+sWl
+sWl
+xlV
 yfp
 pBL
 xlV
@@ -46376,10 +46180,10 @@ yfp
 yfp
 yfp
 yfp
-sok
-goU
-hjh
-kTs
+yfp
+yfp
+yfp
+yfp
 yfp
 yfp
 yfp
@@ -46584,9 +46388,9 @@ gyo
 gyo
 yfp
 gyo
-ueD
-iOR
-pYe
+gyo
+xlV
+xlV
 yfp
 jqp
 uGJ
@@ -46595,13 +46399,13 @@ xmr
 pkM
 aHo
 yfp
-sok
-hjh
-lRV
-gpd
-khq
-iXr
-tNZ
+hRI
+xlV
+xlV
+yfp
+xlV
+xlV
+hRI
 yfp
 hkO
 jRO
@@ -46817,16 +46621,16 @@ xmr
 taP
 yfp
 yfp
-eOG
-khq
-nPP
-gpd
-khq
-icP
-tNZ
+xlV
+vIE
+vIE
+hjh
+vIE
+vIE
+xlV
 yfp
 gyo
-jPy
+eYs
 jPy
 vIE
 ylS
@@ -46835,7 +46639,7 @@ xlV
 mfl
 pxf
 qxW
-vSd
+vaN
 vaN
 tjx
 vaN
@@ -47039,13 +46843,13 @@ llK
 taP
 stq
 yfp
-roK
-khq
-nPP
-gpd
-khq
-iXr
-eYs
+xlV
+vIE
+vIE
+vIE
+vIE
+vIE
+xlV
 yfp
 mmV
 vIE
@@ -47262,18 +47066,18 @@ vqV
 vqV
 ruK
 vqV
-gog
-vIE
-vIE
-rVJ
-jPy
-taP
-uxt
-vIE
-vIE
-yhX
-xmr
-vIE
+vqV
+vqV
+vqV
+vqV
+iMh
+vqV
+edn
+vqV
+vqV
+tyI
+aWz
+mTP
 gpd
 gyo
 mfl
@@ -47484,18 +47288,18 @@ ylS
 vIE
 eow
 vIE
-dGC
-jLi
-jLi
-cTW
-iMh
-vqV
-edn
-vqV
-vqV
-tyI
-aWz
-mTP
+vIE
+xmr
+oYe
+xmr
+uhI
+vIE
+eow
+vIE
+ylS
+yhX
+xmr
+uhI
 gpd
 gyo
 mfl
@@ -47689,14 +47493,14 @@ xmr
 eTa
 prS
 uxt
-gyo
-iff
+mYt
+rPt
+rPt
+bQz
+rPt
+rPt
 vIE
-vIE
-vIE
-vIE
-iff
-gyo
+xlV
 uxt
 xlV
 akm
@@ -47705,14 +47509,14 @@ mjO
 xAf
 xlV
 uxt
-iff
-iff
-iff
+xlV
+vIE
+vIE
 dYx
 vIE
-qNv
-vIE
-eow
+uhI
+arM
+uxt
 gQV
 vIE
 oYe
@@ -47911,14 +47715,14 @@ vIE
 vIE
 tjE
 yfp
-wcc
-sZV
-bHD
-xlV
-lIG
-xBL
-sZV
-wcc
+rgr
+gyo
+gyo
+yfp
+gyo
+gyo
+vyS
+hrB
 yfp
 xlV
 lIG
@@ -47927,14 +47731,14 @@ vIE
 lIG
 stq
 yfp
-nfe
-nfe
-nfe
+rVJ
+hkO
+gyo
 yfp
-pBL
-pBL
-pBL
-uxt
+hrB
+mYt
+dGC
+yfp
 kQr
 iff
 vIE
@@ -48149,7 +47953,7 @@ ahO
 yfp
 yfp
 yfp
-oHY
+yfp
 oHY
 oHY
 fVe
@@ -48371,7 +48175,7 @@ opk
 aVM
 pyk
 ruv
-ruv
+qNv
 ruv
 tCc
 uhx
@@ -48820,7 +48624,7 @@ jHl
 tCc
 hoS
 vaN
-vSd
+vaN
 vSd
 ndh
 rzM

@@ -103,7 +103,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/r_hair = 0
 	var/g_hair = 0
 	var/b_hair = 0
-	var/hair_emissive = FALSE
 
 	var/grad_style = "None"
 	var/r_grad = 0
@@ -120,7 +119,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/r_eyes = 0
 	var/g_eyes = 0
 	var/b_eyes = 0
-	var/eye_emissive = FALSE
 
 	/// Genitalia overlay system
 	var/genitalia_ass = null
@@ -195,11 +193,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/body_color = "#FFFFFF"
 	var/spines = "None"
 	var/list/body_markings = list()
-	var/blood_type = "A+"
-	var/blood_color = "#A10808"
 
 	//Lore
 	var/citizenship = "Phantom City (Earth)"
+	var/blood_type = "A+"
 	var/religion = "None"
 	var/flavor_text = ""
 	var/med_record = ""

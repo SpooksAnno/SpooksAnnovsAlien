@@ -365,9 +365,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/tile/vault{
 	dir = 8
 	},
@@ -473,9 +470,6 @@
 "afv" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
 	},
 /turf/open/floor/tile/dark/yellow2{
 	dir = 1
@@ -1268,10 +1262,6 @@
 	},
 /area/ice_colony/underground/requesition)
 "akH" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/tile/dark/red2{
 	dir = 8
 	},
@@ -1398,9 +1388,6 @@
 /area/ice_colony/surface/substation)
 "alv" = (
 /obj/structure/cable,
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/tile/dark/yellow2{
 	dir = 1
 	},
@@ -4034,9 +4021,6 @@
 /area/ice_colony/surface/garage/one)
 "azV" = (
 /obj/machinery/atmospherics/components/unary/vent_pump,
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/tile/dark/brown2{
 	dir = 1
 	},
@@ -6326,9 +6310,6 @@
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/hangar/checkpoint)
 "aNX" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/tile/dark/yellow2{
 	dir = 1
 	},
@@ -9395,9 +9376,6 @@
 	},
 /area/ice_colony/surface/excavation/storage)
 "bgl" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/tile/dark/purple2{
 	dir = 1
 	},
@@ -11163,10 +11141,6 @@
 /area/ice_colony/underground/hallway/south_east)
 "bsD" = (
 /obj/structure/cable,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/reception/checkpoint_north)
 "bsP" = (
@@ -11893,10 +11867,6 @@
 	dir = 4
 	},
 /obj/effect/landmark/weed_node,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
 /turf/open/floor/tile/red/whitered{
 	dir = 4
 	},
@@ -13011,7 +12981,6 @@
 /area/ice_colony/underground/security/interrogation)
 "bEv" = (
 /obj/structure/table,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/security/interrogation)
 "bEw" = (
@@ -13840,9 +13809,6 @@
 "bIi" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
 	},
 /turf/open/floor/tile/dark/red2{
 	dir = 1
@@ -16101,16 +16067,6 @@
 	},
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/security/interrogation)
-"bSa" = (
-/obj/structure/prop/mainship/railing{
-	dir = 8
-	},
-/obj/effect/urban/decal/dirt,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plating/icefloor,
-/area/ice_colony/underground/hangar)
 "bSc" = (
 /obj/structure/cargo_container/red{
 	dir = 8
@@ -17464,7 +17420,6 @@
 /obj/structure/table/wood,
 /obj/item/evidencebag,
 /obj/effect/spawner/random/misc/cigar,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/wood,
 /area/ice_colony/underground/security/detective)
 "cde" = (
@@ -17800,14 +17755,6 @@
 	dir = 10
 	},
 /area/ice_colony/surface/substation/smes)
-"cEs" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark/brown2{
-	dir = 1
-	},
-/area/ice_colony/surface/garage/two)
 "cEE" = (
 /obj/effect/turf_decal/warning_stripes/thick{
 	dir = 1
@@ -18507,15 +18454,6 @@
 	dir = 4
 	},
 /area/ice_colony/underground/hallway/south_east/garbledradio)
-"dwT" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/tile/dark/red2{
-	dir = 8
-	},
-/area/ice_colony/underground/responsehangar)
 "dya" = (
 /obj/machinery/door/airlock/engineering/evac{
 	dir = 8
@@ -18607,15 +18545,6 @@
 /obj/effect/spawner/random/misc/structure/filingcabinet/highspawn,
 /turf/open/floor/wood,
 /area/ice_colony/surface/command)
-"dDH" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/cable,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/tile/dark2,
-/area/ice_colony/underground/engineering)
 "dDP" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/snow/layer0,
@@ -19117,13 +19046,6 @@
 /obj/effect/spawner/random/misc/structure/broken_window/colonyspawn,
 /turf/open/floor/plating,
 /area/ice_colony/surface/bar/canteen)
-"eoG" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/plating,
-/area/ice_colony/underground/engineering/substation)
 "epk" = (
 /obj/structure/table/wood/gambling,
 /obj/machinery/atmospherics/pipe/manifold/green/hidden{
@@ -20217,15 +20139,6 @@
 	dir = 1
 	},
 /area/ice_colony/surface/garage/one)
-"fQf" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/plating,
-/area/ice_colony/underground/maintenance/north)
 "fRk" = (
 /turf/closed/wall/r_wall,
 /area/ice_colony/underground/crew/bball/garbledradio)
@@ -21088,13 +21001,6 @@
 	dir = 4
 	},
 /area/ice_colony/surface/excavationbarracks)
-"hak" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/plating,
-/area/ice_colony/underground/maintenance/east)
 "haA" = (
 /obj/structure/table,
 /obj/effect/spawner/random/engineering/engibelt,
@@ -22813,13 +22719,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating,
 /area/ice_colony/surface/mining)
-"jHi" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/plating/icefloor,
-/area/ice_colony/underground/hangar)
 "jHk" = (
 /obj/machinery/light,
 /obj/effect/spawner/random/misc/plant,
@@ -22863,14 +22762,6 @@
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/command/checkpoint)
-"jIx" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark/yellow2{
-	dir = 1
-	},
-/area/ice_colony/surface/substation/smes)
 "jII" = (
 /obj/effect/turf_decal/warning_stripes/linethick{
 	dir = 4
@@ -23218,10 +23109,6 @@
 	},
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/engineering)
-"kgR" = (
-/obj/docking_port/stationary/supplycolony,
-/turf/open/floor/mainship/empty,
-/area/ice_colony/underground/hangar)
 "khj" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark2,
@@ -23755,18 +23642,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/ground/ice,
 /area/ice_colony/underground/maintenance/east)
-"kUj" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/tile/darkgreen/darkgreen2{
-	dir = 8
-	},
-/area/ice_colony/surface/hydroponics/lobby)
 "kUr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -24173,13 +24048,6 @@
 /obj/effect/landmark/excavation_site_spawner,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/clearing/north)
-"lzg" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 1;
-	pixel_y = -28
-	},
-/turf/open/floor/tile/red/whitered,
-/area/ice_colony/underground/medical/hallway)
 "lAJ" = (
 /obj/machinery/door/airlock/mainship/security/glass/free_access{
 	name = "\improper Colony Security Checkpoint"
@@ -24951,17 +24819,6 @@
 	dir = 9
 	},
 /area/ice_colony/surface/engineering)
-"mnJ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/red/whitered{
-	dir = 1
-	},
-/area/ice_colony/underground/medical/treatment/garbledradio)
 "mob" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -25211,9 +25068,6 @@
 	},
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/medical/lobby/garbledradio)
-"mGa" = (
-/turf/open/floor/mainship/empty,
-/area/ice_colony/underground/hangar)
 "mGh" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/engineering/toolbox,
@@ -26235,15 +26089,6 @@
 	dir = 6
 	},
 /area/ice_colony/exterior/surface/landing_pad2)
-"nXk" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/tile/dark/yellow2{
-	dir = 8
-	},
-/area/ice_colony/surface/research/tech_storage)
 "nXs" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/warning,
@@ -27098,9 +26943,6 @@
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/surface/valley/southeast)
 "pej" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/tile/dark/brown2{
 	dir = 9
 	},
@@ -27433,12 +27275,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/surface/engineering)
-"pIM" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/wood,
-/area/ice_colony/underground/crew/chapel)
 "pIT" = (
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/exterior/underground/caves/open)
@@ -27449,14 +27285,6 @@
 	dir = 6
 	},
 /area/ice_colony/surface/hangar/beta)
-"pJx" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark/yellow2{
-	dir = 1
-	},
-/area/ice_colony/surface/engineering)
 "pJP" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -28269,13 +28097,6 @@
 /obj/effect/spawner/random/engineering/structure/atmospherics_portable/icecolony,
 /turf/open/floor/tile/dark/yellow2,
 /area/ice_colony/surface/garage/repair)
-"qNl" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/tile/dark2,
-/area/ice_colony/underground/engineering)
 "qNr" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/effect/ai_node,
@@ -30734,14 +30555,6 @@
 	dir = 9
 	},
 /area/ice_colony/underground/medical/hallway)
-"tNG" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark/brown2{
-	dir = 1
-	},
-/area/ice_colony/underground/crew/lavatory)
 "tNJ" = (
 /obj/effect/spawner/random/misc/structure/flavorvending,
 /obj/machinery/light{
@@ -30921,14 +30734,6 @@
 	dir = 8
 	},
 /area/ice_colony/surface/hangar/beta)
-"uar" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark/brown2{
-	dir = 1
-	},
-/area/ice_colony/underground/crew/disposals)
 "ubk" = (
 /obj/effect/spawner/random/misc/structure/supplycrate,
 /turf/open/floor/plating,
@@ -31010,10 +30815,6 @@
 /area/ice_colony/exterior/surface/valley/south)
 "uie" = (
 /obj/effect/landmark/weed_node,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
 /turf/open/floor/plating,
 /area/ice_colony/underground/maintenance/engineering/garbledradio)
 "ujx" = (
@@ -31174,12 +30975,6 @@
 	dir = 8
 	},
 /area/ice_colony/surface/hydroponics/south)
-"urH" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark2,
-/area/ice_colony/underground/crew/morgue)
 "usn" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 10
@@ -31372,15 +31167,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/tile/white,
 /area/ice_colony/surface/clinic/storage)
-"uGE" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/open/floor/tile/dark/yellow2{
-	dir = 4
-	},
-/area/ice_colony/surface/research/temporary)
 "uGL" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/shuttle/shuttle_control/dropship,
@@ -32396,7 +32182,6 @@
 /obj/item/tool/pen/blue{
 	pixel_x = 5
 	},
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/wood,
 /area/ice_colony/surface/command)
 "vXA" = (
@@ -32559,7 +32344,6 @@
 	name = "Checkpoint Lockdown";
 	pixel_y = 36
 	},
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/tile/dark/red2{
 	dir = 9
 	},
@@ -32702,13 +32486,6 @@
 	dir = 8
 	},
 /area/ice_colony/surface/storage_unit/power)
-"wpP" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor,
-/area/ice_colony/surface/mining)
 "wpZ" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/cleanable/blood,
@@ -32920,14 +32697,6 @@
 /obj/effect/landmark/xeno_resin_door,
 /turf/open/floor/plating/ground/snow/layer0,
 /area/ice_colony/exterior/underground/caves/open)
-"wEW" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark/blue2{
-	dir = 1
-	},
-/area/ice_colony/surface/command)
 "wFi" = (
 /obj/effect/spawner/random/misc/structure/cabinet,
 /obj/item/clothing/suit/storage/snow_suit,
@@ -34013,22 +33782,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark2,
 /area/ice_colony/underground/security)
-"xOP" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/dark2,
-/area/ice_colony/surface/engineering/generator)
-"xOQ" = (
-/obj/structure/prop/mainship/railing{
-	dir = 4
-	},
-/obj/machinery/computer/supplycomp/colony,
-/obj/effect/urban/decal/dirt,
-/obj/effect/urban/decal/dirt,
-/obj/effect/urban/decal/dirt,
-/turf/open/floor/plating/icefloor,
-/area/ice_colony/underground/hangar)
 "xOR" = (
 /obj/effect/spawner/random/misc/structure/flavorvending,
 /turf/open/floor/tile/dark/red2{
@@ -34057,15 +33810,6 @@
 /obj/effect/landmark/start/job/xenomorph,
 /turf/closed/mineral/smooth/bluefrostwall,
 /area/ice_colony/underground/maintenance/south)
-"xQA" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/plating/icefloor/warnplate{
-	dir = 8
-	},
-/area/ice_colony/exterior/surface/landing_pad2)
 "xQD" = (
 /obj/effect/spawner/random/misc/structure/supplycrate,
 /turf/open/floor/tile/vault{
@@ -34379,7 +34123,6 @@
 /obj/structure/table/wood,
 /obj/effect/spawner/random/misc/paperbin,
 /obj/item/tool/pen/blue,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/wood,
 /area/ice_colony/underground/security/marshal)
 "yjg" = (
@@ -37422,7 +37165,7 @@ oiZ
 hOW
 aym
 uED
-xQA
+cTP
 cdM
 cdM
 hfp
@@ -42588,7 +42331,7 @@ aPQ
 aUg
 aUl
 aVk
-uGE
+aVF
 aVF
 aWJ
 aWY
@@ -43052,7 +42795,7 @@ bhj
 bev
 bgH
 bkC
-pIM
+bkR
 blR
 bmA
 bnc
@@ -43652,7 +43395,7 @@ wIC
 twu
 aUW
 uXS
-nXk
+aVO
 eTP
 aYq
 aUZ
@@ -43884,7 +43627,7 @@ bfa
 bdN
 bdX
 beB
-fQf
+bgI
 bev
 bhj
 bgH
@@ -44164,7 +43907,7 @@ buW
 bMA
 bKW
 bNt
-uar
+bNU
 bMS
 bNO
 bOo
@@ -44350,7 +44093,7 @@ ccP
 pTv
 pTv
 bNo
-lzg
+bzd
 byP
 bzo
 bzC
@@ -44651,7 +44394,7 @@ uqz
 iQM
 sXe
 ath
-kUj
+ath
 uyO
 asO
 wxE
@@ -44944,7 +44687,7 @@ bfa
 tlI
 bdX
 ale
-xOQ
+ale
 dRG
 rDW
 twk
@@ -44960,7 +44703,7 @@ bev
 pCt
 bgH
 bkE
-urH
+bkT
 bkT
 bkT
 bkT
@@ -45156,7 +44899,7 @@ bfa
 bdN
 bdX
 ale
-mGa
+ale
 alP
 rDW
 twk
@@ -45368,7 +45111,7 @@ bfa
 bdN
 bdX
 ale
-kgR
+ale
 alP
 alP
 aty
@@ -45580,7 +45323,7 @@ bfa
 tlI
 bdX
 ale
-mGa
+ale
 alP
 alP
 bWw
@@ -45591,7 +45334,7 @@ big
 bij
 tbI
 beB
-fQf
+bgI
 bgH
 nyL
 bgH
@@ -45792,7 +45535,7 @@ bfa
 bdN
 bdX
 ale
-bSa
+ale
 alP
 alP
 bWx
@@ -46496,7 +46239,7 @@ bMc
 uPy
 bKW
 bNv
-tNG
+bMv
 bOL
 bOL
 bOL
@@ -46889,7 +46632,7 @@ sHV
 omG
 wLR
 lrW
-mnJ
+vXx
 jYt
 mFh
 rRg
@@ -47483,10 +47226,10 @@ bVQ
 iET
 bMo
 bAC
-jHi
+alP
 szG
 szG
-jHi
+alP
 bfy
 bfa
 kmN
@@ -55987,7 +55730,7 @@ ydx
 gvt
 bTg
 bTk
-dDH
+pHY
 pHY
 pHY
 tuk
@@ -56408,7 +56151,7 @@ btz
 bsh
 rKs
 buH
-eoG
+buj
 buj
 btz
 bpm
@@ -57715,7 +57458,7 @@ efV
 oBz
 oBz
 oBz
-hak
+oBz
 oBz
 oBz
 bDx
@@ -58323,7 +58066,7 @@ dEc
 dEc
 bZb
 bZi
-qNl
+dEc
 dEc
 dEc
 bql
@@ -64536,7 +64279,7 @@ onk
 onk
 onk
 aav
-pJx
+aeu
 afZ
 abs
 ahL
@@ -64805,7 +64548,7 @@ amO
 wkf
 mqj
 azE
-cEs
+aAL
 aAW
 aAW
 ves
@@ -65814,7 +65557,7 @@ aeI
 aeI
 aeI
 aeh
-xOP
+aeM
 aeM
 aeM
 aeO
@@ -66048,7 +65791,7 @@ xCs
 fEu
 wkf
 atV
-wEW
+aqC
 app
 cCG
 uoc
@@ -69637,7 +69380,7 @@ uSg
 adj
 adj
 agr
-jIx
+akc
 rRt
 pWo
 rRt
@@ -73514,7 +73257,7 @@ nRZ
 aUA
 aUA
 aUA
-dwT
+aUA
 blZ
 bmV
 bMj
@@ -73890,7 +73633,7 @@ alE
 kJS
 amk
 anq
-wpP
+anq
 anq
 aoW
 amk

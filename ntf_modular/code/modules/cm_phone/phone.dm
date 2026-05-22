@@ -689,13 +689,6 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	networks_receive = list(FACTION_NEUTRAL)
 	networks_transmit = list(FACTION_NEUTRAL)
 
-/obj/structure/transmitter/colony_net/auto_id/Initialize(mapload, ...)
-	. = ..()
-	var/area/thearea = get_area(src)
-	phone_category = "Colony"
-	if(thearea)
-		phone_id = thearea.name
-
 /obj/structure/transmitter/colony_net/desk
 	name = "wired telephone"
 	icon_state = "desk_phone"

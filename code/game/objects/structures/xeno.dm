@@ -35,6 +35,10 @@
 		if(hive.color)
 			color = gradient(COLOR_BLACK, hive.color, 0.5)
 
+/// Destroy the alien effect when the weed it was on is destroyed
+/obj/alien/proc/weed_removed()
+	SIGNAL_HANDLER
+	obj_destruction(damage_flag = "melee")
 
 /obj/alien/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -68,40 +72,6 @@
 	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_BLISTERING))
 		take_damage(rand(2, 20) * 0.1, BURN, ACID)
 
-/// Destroy the alien effect when the weed it was on is destroyed
-/obj/alien/proc/weed_removed()
-	SIGNAL_HANDLER
-	obj_destruction(damage_flag = "melee")
-
-///special behavior when atoms enter our loc
-/obj/alien/proc/on_loc_entered(datum/source, atom/movable/crosser)
-	SIGNAL_HANDLER
-	return
-
-///Slows down non xeno crossers
-/obj/alien/proc/slow_down_crosser(atom/movable/crosser, slow_amount = WEED_SLOWDOWN)
-	SIGNAL_HANDLER
-	if(issamexenohive(crosser))
-		return
-	if(crosser.throwing || crosser.buckled)
-		return
-	if(crosser.pass_flags & PASS_LOW_STRUCTURE)
-		return
-	if(HAS_TRAIT(crosser, TRAIT_TANK_DESANT))
-		return
-	if(CHECK_MULTIPLE_BITFIELDS(crosser.allow_pass_flags, HOVERING))
-		return
-	if(issealedvehicle(crosser))
-		var/obj/vehicle/sealed/vehicle = crosser
-		COOLDOWN_INCREMENT(vehicle, cooldown_vehicle_move, slow_amount)
-		return
-	if(!isliving(crosser))
-		return
-	var/mob/living/carbon/human/victim = crosser
-	if(victim.lying_angle)
-		return
-	victim.next_move_slowdown += slow_amount
-
 /*
 * Resin
 */
@@ -128,8 +98,7 @@
 	plane = FLOOR_PLANE
 	layer = ABOVE_WEEDS_LAYER
 	hit_sound = SFX_ALIEN_RESIN_MOVE
-	///slows things by this much on cross
-	var/slow_amt = 8
+	var/slow_amt = 3
 	/// Does this refund build points when destoryed?
 	var/refundable = TRUE
 
@@ -138,9 +107,44 @@
 /obj/alien/resin/sticky/Initialize(mapload)
 	. = ..()
 	var/static/list/connections = list(
-		COMSIG_ATOM_ENTERED = PROC_REF(on_loc_entered)
+		COMSIG_ATOM_ENTERED = PROC_REF(slow_down_crosser)
 	)
 	AddElement(/datum/element/connect_loc, connections)
+
+/obj/alien/resin/sticky/proc/slow_down_crosser(datum/source, atom/movable/crosser)
+	SIGNAL_HANDLER
+	if(crosser.throwing || crosser.buckled)
+		return
+
+	if(issealedvehicle(crosser))
+		var/obj/vehicle/sealed/vehicle = crosser
+		COOLDOWN_INCREMENT(vehicle, cooldown_vehicle_move, WEED_SLOWDOWN)
+		return
+
+	if(isxeno(crosser))
+		var/mob/living/carbon/xenomorph/X = crosser
+		if(!issamexenohive(X))
+			X.next_move_slowdown += slow_amt
+		return
+
+	if(issamexenohive(crosser))
+		return
+
+	if(!isliving(crosser))
+		return
+
+	if(HAS_TRAIT(crosser, TRAIT_TANK_DESANT))
+		return
+
+	if(CHECK_MULTIPLE_BITFIELDS(crosser.allow_pass_flags, HOVERING))
+		return
+
+	var/mob/living/victim = crosser
+
+	if(victim.lying_angle)
+		return
+
+	victim.next_move_slowdown += slow_amt
 
 /obj/alien/resin/sticky/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage * xeno_attacker.xeno_melee_damage_modifier, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(xeno_attacker.status_flags & INCORPOREAL)

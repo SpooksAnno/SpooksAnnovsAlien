@@ -67,14 +67,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	dheight = 1
 	height = 3
 
-/obj/docking_port/stationary/supplycolony
-	id = "supply_colony"
-	roundstart_template = /datum/map_template/shuttle/supply/colony
-	width = 3
-	dwidth = 1
-	dheight = 0
-	height = 1
-
 /obj/docking_port/stationary/supply/som
 	id = "supply_SOM_home"
 	roundstart_template = /datum/map_template/shuttle/supply/som
@@ -656,12 +648,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	faction = FACTION_ICC
 	home_id = "supply_icc"
 	req_access = list(ACCESS_ICC_CARGO)
-
-/obj/machinery/computer/supplycomp/colony
-	shuttle_id = "supply_colony"
-	faction = FACTION_ICC
-	home_id = "supply_colony"
-	req_access = list(ACCESS_CIVILIAN_LOGISTICS)
 
 /obj/docking_port/mobile/supply/som
 	dir = 1

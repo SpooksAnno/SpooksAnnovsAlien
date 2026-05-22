@@ -171,7 +171,7 @@
 /mob/living/carbon/human/proc/update_fluff()
 	remove_overlay(ACCESSORY_FLUFF_LAYER)
 	return // Disabled until fluff can be anchored through an organ/bodypart overlay, like SPLURT.
-	/*
+
 	if(!fluff || fluff == "None")
 		return
 
@@ -200,7 +200,6 @@
 
 	overlays_standing[ACCESSORY_FLUFF_LAYER] = fluff_layers
 	apply_overlay(ACCESSORY_FLUFF_LAYER)
-	*/
 
 /mob/living/carbon/human/proc/update_synth_antenna()
 	remove_overlay(ACCESSORY_ANTENNA_LAYER)
@@ -358,10 +357,6 @@
 			var/image/restored_eyes = image(icon = restored_eye_icon)
 			restored_eyes.layer = ACCESSORY_FACE_TOP_LAYER
 			snout_layers += restored_eyes
-			if(eye_emissive && ntf_should_render_emissives())
-				var/mutable_appearance/restored_eye_glow = ntf_emissive_appearance_copy(restored_eyes, src)
-				if(restored_eye_glow)
-					snout_layers += restored_eye_glow
 
 	if(!length(snout_layers))
 		return

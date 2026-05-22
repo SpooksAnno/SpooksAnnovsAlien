@@ -19225,7 +19225,7 @@
 "pVD" = (
 /obj/structure/rack,
 /obj/item/storage/box/visual/grenade/teargas,
-/obj/item/big_ammo_box/shotgun/tracker,
+/obj/item/shotgunbox/tracker,
 /obj/item/ammo_magazine/shotgun/beanbag,
 /obj/item/ammo_magazine/shotgun/beanbag,
 /obj/item/ammo_magazine/shotgun/beanbag,

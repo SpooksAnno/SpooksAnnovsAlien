@@ -18,7 +18,7 @@
 	minimum_sensitivity = 0.6 SECONDS
 	var/ping_count = 0
 	var/ping_overlay
-	quiet = FALSE
+	var/quiet = FALSE
 
 /obj/item/attachable/motiondetector/advanced/sg
 	name = "AC-4 integrated motion tracker"
@@ -146,7 +146,3 @@
 /obj/effect/temp_visual/minimap_blip/Initialize(mapload, minimap_flags = MINIMAP_FLAG_ALL)
 	. = ..()
 	SSminimaps.add_marker(src, minimap_flags, image('ntf_modular/icons/UI_icons/cm/map_blips.dmi', null, "locator", MINIMAP_BLIPS_LAYER_EXTRA_HIGH))
-
-//used for anthro racial
-/obj/item/attachable/motiondetector/natural
-	quiet = TRUE

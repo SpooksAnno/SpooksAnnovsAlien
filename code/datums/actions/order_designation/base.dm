@@ -106,14 +106,11 @@ GLOBAL_LIST_INIT(designator_mode_image_list, list(
 
 ///Toggles on the new mode
 /datum/action/ability/activable/build_designator/proc/activate_mode(new_mode)
-	var/mob/living/carbon/carbon_owner = owner
-	if(carbon_owner.selected_ability == src)
-		RegisterSignal(owner, COMSIG_DO_OVERWATCH_RADIAL, PROC_REF(override_cic_radial))
+	RegisterSignal(owner, COMSIG_DO_OVERWATCH_RADIAL, PROC_REF(override_cic_radial))
 	switch(new_mode)
 		if(BUILD_DESIGNATOR_MODE)
-			if(carbon_owner.selected_ability == src)
-				RegisterSignal(owner, COMSIG_ATOM_MOUSE_ENTERED, PROC_REF(show_hologram_call))
-				RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_owner_rotate))
+			RegisterSignal(owner, COMSIG_ATOM_MOUSE_ENTERED, PROC_REF(show_hologram_call))
+			RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_owner_rotate))
 			target_flags = ABILITY_TURF_TARGET
 			use_state_flags = NONE
 			action_icon_state = "build_designator"

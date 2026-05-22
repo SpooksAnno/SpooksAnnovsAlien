@@ -12253,7 +12253,6 @@
 /area/bluesummers/caves/mining)
 "koA" = (
 /obj/effect/landmark/start/job/xenomorph,
-/obj/effect/landmark/patrol_point/xeno/xeno_11,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "koC" = (
@@ -22688,10 +22687,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/south)
-"sxo" = (
-/obj/effect/landmark/patrol_point/xeno/xeno_21,
-/turf/open/floor/plating/ground/drought,
-/area/bluesummers/inside/space_port)
 "sxq" = (
 /obj/structure/largecrate/random/mini{
 	pixel_y = 8;
@@ -47505,7 +47500,7 @@ bMd
 byr
 mBd
 ohZ
-sxo
+ohZ
 fUE
 ohZ
 ohZ

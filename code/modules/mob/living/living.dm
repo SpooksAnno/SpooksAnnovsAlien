@@ -418,10 +418,10 @@
 		return
 	if(moving_diagonally) // No pushing in diagonal move
 		return
+	if(!client) //why??
+		return
 	var/mob/mob_to_push = AM
 	if(istype(mob_to_push) && mob_to_push.lying_angle)
-		return
-	if(!client && istype(mob_to_push) && mob_to_push.client && !prob(10))
 		return
 	now_pushing = TRUE
 	var/dir_to_target = get_dir(src, AM)

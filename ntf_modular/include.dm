@@ -164,7 +164,6 @@
 #include "code\modules\mob\living\carbon\human\genital_selection.dm"
 #include "code\modules\mob\living\carbon\human\human_defines.dm"
 #include "code\modules\mob\living\carbon\human\human_helpers.dm"
-#include "code\modules\mob\living\carbon\human\species_types\custom_species.dm"
 #include "code\modules\mob\living\carbon\human\species_types\splurt_species.dm"
 #include "code\modules\mob\living\carbon\human\sprite_accessories\ears.dm"
 #include "code\modules\mob\living\carbon\human\sprite_accessories\fluff.dm"

@@ -27,7 +27,7 @@
 
 /datum/individual_stats/New(mob/living/carbon/new_mob, new_faction, new_currency)
 	. = ..()
-	RegisterSignals(SSdcs, list(COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, COMSIG_GLOB_HVH_RESPAWN_WAVE), PROC_REF(post_mission_credits))
+	RegisterSignal(SSdcs, COMSIG_GLOB_CAMPAIGN_MISSION_ENDED, PROC_REF(post_mission_credits))
 	owner_ckey = new_mob.ckey
 	current_mob = new_mob
 	faction = new_faction
@@ -48,12 +48,10 @@
 	return ..()
 
 ///Pay each player additional credits based on individual performance during the mission
-/datum/individual_stats/proc/post_mission_credits(datum/source, datum/game_mode/hvh/hvh_mode)
+/datum/individual_stats/proc/post_mission_credits(datum/source)
 	SIGNAL_HANDLER
 	var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[owner_ckey]
-	give_funds(hvh_mode.get_fund_value(personal_statistics.get_mission_reward()))
-	if(hvh_mode.wave_timer) //wave modes don't have missions to reset this, although this could be a flag
-		personal_statistics.reset_mission_stats()
+	give_funds(personal_statistics.get_mission_reward())
 
 ///Applies cash
 /datum/individual_stats/proc/give_funds(amount)
@@ -181,6 +179,12 @@
 	return GLOB.conscious_state
 
 /datum/individual_stats/ui_data(mob/user)
+	/* totally nothing will go wrong
+	var/datum/game_mode/hvh/campaign/current_mode = SSticker.mode
+	if(!istype(current_mode))
+		CRASH("campaign_mission loaded without campaign game mode")
+	*/
+
 	var/list/data = list()
 	var/mob/living/living_user = user
 	data["current_job"] = istype(living_user) ? living_user.job.title : null
@@ -266,6 +270,12 @@
 	return data
 
 /datum/individual_stats/ui_static_data(mob/user)
+	/*
+	var/datum/game_mode/hvh/campaign/current_mode = SSticker.mode
+	if(!istype(current_mode))
+		CRASH("campaign_mission loaded without campaign game mode")
+	*/
+
 	var/list/data = list()
 
 	var/ui_theme
@@ -299,6 +309,12 @@
 	. = ..()
 	if(.)
 		return
+
+	/*
+	var/datum/game_mode/hvh/campaign/current_mode = SSticker.mode
+	if(!istype(current_mode))
+		CRASH("campaign_mission loaded without campaign game mode")
+	*/
 
 	var/mob/living/user = usr
 

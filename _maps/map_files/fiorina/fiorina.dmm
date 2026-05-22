@@ -7390,13 +7390,6 @@
 	},
 /turf/closed/wall/r_wall/prison_unmeltable,
 /area/fiorina/oob)
-"edy" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 1;
-	pixel_y = -28
-	},
-/turf/open/floor/wood,
-/area/fiorina/station/park)
 "edQ" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -13789,13 +13782,6 @@
 	},
 /turf/open/space,
 /area/space)
-"hGB" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/prison/darkpurple/full,
-/area/fiorina/station/research_cells)
 "hGL" = (
 /obj/structure/platform{
 	dir = 8
@@ -16541,9 +16527,6 @@
 /obj/structure/barricade/handrail/type_b,
 /turf/open/floor/prison,
 /area/fiorina/lz/near_lzI)
-"jgd" = (
-/turf/open/floor/mainship/empty,
-/area/fiorina/tumor/servers)
 "jgi" = (
 /obj/item/stool,
 /obj/structure/sign/poster{
@@ -22254,14 +22237,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/prison,
 /area/fiorina/station/civres_blue)
-"mco" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/prison/whitegreen/full{
-	dir = 10
-	},
-/area/fiorina/tumor/ice_lab)
 "mcq" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/plating/plating_catwalk/prison/alt,
@@ -23129,16 +23104,6 @@
 	dir = 1
 	},
 /area/fiorina/station/medbay)
-"mBd" = (
-/obj/structure/prop/mainship/railing{
-	dir = 4
-	},
-/obj/machinery/computer/supplycomp/colony,
-/obj/effect/urban/decal/dirt,
-/obj/effect/urban/decal/dirt,
-/obj/effect/urban/decal/dirt,
-/turf/open/floor/plating/kutjevo,
-/area/fiorina/tumor/servers)
 "mBS" = (
 /obj/structure/barricade/sandbags{
 	dir = 8;
@@ -24325,16 +24290,6 @@
 	},
 /turf/open/floor/plating/kutjevo,
 /area/fiorina/station/power_ring)
-"njL" = (
-/obj/structure/prop/mainship/railing{
-	dir = 8
-	},
-/obj/effect/urban/decal/dirt,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/prison/plate,
-/area/fiorina/tumor/servers)
 "njP" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1{
 	dir = 8
@@ -26934,10 +26889,6 @@
 /obj/structure/prop/mainship/gelida/rails,
 /turf/open/floor/prison,
 /area/fiorina/tumor/servers)
-"oHk" = (
-/obj/docking_port/stationary/supplycolony,
-/turf/open/floor/mainship/empty,
-/area/fiorina/tumor/servers)
 "oHo" = (
 /obj/structure/largecrate/random/case/double,
 /turf/open/floor/prison/darkbrown/full,
@@ -28772,15 +28723,6 @@
 	dir = 8
 	},
 /area/fiorina/station/flight_deck)
-"pFx" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/prison/darkpurple{
-	dir = 8
-	},
-/area/fiorina/tumor/servers)
 "pFJ" = (
 /obj/structure/barricade/solid{
 	dir = 1
@@ -32748,14 +32690,6 @@
 	dir = 9
 	},
 /area/fiorina/tumor/servers)
-"rTd" = (
-/obj/effect/landmark/weed_node,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/prison,
-/area/fiorina/station/telecomm/lz1_cargo)
 "rTe" = (
 /obj/item/reagent_containers/food/drinks/coffee{
 	name = "\improper paper cup"
@@ -35866,14 +35800,6 @@
 "tAk" = (
 /obj/item/reagent_containers/food/drinks/cans/waterbottle,
 /turf/open/floor/plating/kutjevo,
-/area/fiorina/station/medbay)
-"tAu" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/prison/sterilewhite{
-	dir = 10
-	},
 /area/fiorina/station/medbay)
 "tAC" = (
 /turf/open/floor/prison/whitepurple{
@@ -41654,13 +41580,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/plating/kutjevo,
 /area/fiorina/tumor/civres)
-"wGi" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/prison/blue/corner,
-/area/fiorina/station/power_ring)
 "wGj" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/wall/prison,
@@ -60499,7 +60418,7 @@ mhO
 erP
 erP
 bod
-edy
+erP
 yjX
 vJh
 vJh
@@ -61838,7 +61757,7 @@ xwn
 arZ
 bMX
 uYp
-pFx
+cpM
 cpM
 cpM
 dTU
@@ -65005,7 +64924,7 @@ vqI
 pCG
 unp
 xTh
-mBd
+jme
 jme
 jme
 lXD
@@ -65217,7 +65136,7 @@ jcO
 juo
 unp
 unp
-jgd
+jme
 gpU
 jme
 oir
@@ -65429,7 +65348,7 @@ gnT
 rsA
 qIe
 unp
-oHk
+jme
 jme
 jcO
 lXD
@@ -65641,7 +65560,7 @@ xTh
 glg
 jcO
 unp
-jgd
+jcO
 inD
 jcO
 hbl
@@ -65853,7 +65772,7 @@ vVk
 vVk
 vVk
 vVk
-njL
+jcO
 jcO
 jcO
 kAW
@@ -71383,7 +71302,7 @@ cYA
 cYA
 bYk
 rOQ
-mco
+xCL
 qee
 xdo
 rIk
@@ -75011,7 +74930,7 @@ taB
 nYZ
 uDl
 uDl
-tAu
+vSk
 aLy
 eZx
 eZx
@@ -80516,7 +80435,7 @@ byS
 gNi
 gfJ
 wIS
-hGB
+wIS
 wIS
 szE
 sTT
@@ -84354,7 +84273,7 @@ wIS
 tWA
 wov
 wVf
-rTd
+bSn
 vXd
 pdy
 iof
@@ -87381,7 +87300,7 @@ jsn
 pJr
 tGb
 lUa
-wGi
+vef
 mmq
 vWr
 pFQ

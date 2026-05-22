@@ -17693,6 +17693,10 @@
 	dir = 10
 	},
 /area/bluemoon/outside/building/lz)
+"uBw" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating/ground/ice,
+/area/bluemoon/caves/n)
 "uBC" = (
 /turf/open/floor/tile/vault{
 	dir = 8
@@ -29106,7 +29110,7 @@ xGy
 iKK
 iKK
 iKK
-iKK
+uBw
 iKK
 uJX
 xGy

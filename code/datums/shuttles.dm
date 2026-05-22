@@ -246,10 +246,6 @@
 	shuttle_id = "supplypmc"
 	name = "AC Supply Shuttle"
 
-/datum/map_template/shuttle/supply/colony
-	shuttle_id = "supplycolony"
-	name = "Colony Supply Shuttle"
-
 /datum/map_template/shuttle/shipelevator
 	shuttle_id = SHUTTLE_SHIPELEVATOR
 	name = "Ship Elevator"

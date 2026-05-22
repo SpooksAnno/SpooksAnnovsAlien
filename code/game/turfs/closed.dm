@@ -277,7 +277,6 @@
 
 //Ground map dense jungle
 /turf/closed/gm
-	name = "thick jungle wall"
 	icon = 'icons/turf/walls/jungle.dmi'
 	icon_state = "junglewall-0"
 	desc = "Some thick jungle."
@@ -292,6 +291,7 @@
 /turf/closed/gm/add_debris_element()
 	AddElement(/datum/element/debris, DEBRIS_LEAF, -40, 5)
 
+	//Not yet
 /turf/closed/gm/ex_act(severity)
 	switch(severity)
 		if(EXPLODE_DEVASTATE)

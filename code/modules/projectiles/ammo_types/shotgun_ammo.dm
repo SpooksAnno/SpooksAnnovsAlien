@@ -337,7 +337,7 @@
 	max_range = 15
 	damage = 40
 	damage_falloff = 0.25
-	penetration = 20
+	penetration = 15
 	sundering = 1.5
 
 /datum/ammo/bullet/shotgun/tx15_flechette/spread
@@ -350,7 +350,7 @@
 	ammo_behavior_flags = AMMO_BALLISTIC
 	shell_speed = 3
 	max_range = 15
-	damage = 60
+	damage = 80
 	penetration = 20
 	sundering = 3.5
 

@@ -182,14 +182,13 @@
 	caliber = CALIBER_15CM
 	max_rounds = 1
 	reload_delay = 8 SECONDS
-	default_ammo = /datum/ammo/rocket/heavy_isg/unguided
+	default_ammo = /datum/ammo/rocket/heavy_isg
 
 /obj/item/ammo_magazine/heavy_isg/he
 	name = "FK-88 HE shell (155mm Shell)"
 	desc = "A 15cm HE shell for the FK-88 mounted flak gun. Right-click with other hand to swap between unguided and guided modes."
-	default_ammo = /datum/ammo/rocket/heavy_isg/unguided
-	///Whether this is direct fire or not
-	var/guided = FALSE
+	default_ammo = /datum/ammo/rocket/heavy_isg
+	var/guided = TRUE
 
 /obj/item/ammo_magazine/heavy_isg/he/attack_hand_alternate(mob/living/user)
 	if(guided)

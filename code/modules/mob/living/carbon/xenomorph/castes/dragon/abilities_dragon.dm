@@ -635,7 +635,7 @@
 				continue
 			if(isfire(impacted_atom))
 				var/obj/fire/fire = impacted_atom
-				fire.reduce_fire(20, 10)
+				fire.reduce_fire(20)
 				continue
 			if(!(impacted_atom.resistance_flags & XENO_DAMAGEABLE))
 				continue

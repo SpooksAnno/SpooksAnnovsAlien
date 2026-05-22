@@ -7578,26 +7578,6 @@
 	},
 /turf/open/floor/mainship/floor,
 /area/mainship/living/pilotbunks)
-"cIC" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/item/reagent_containers/jerrycan,
-/obj/item/reagent_containers/jerrycan,
-/obj/item/reagent_containers/jerrycan,
-/obj/item/reagent_containers/jerrycan,
-/obj/item/reagent_containers/jerrycan,
-/obj/item/reagent_containers/jerrycan,
-/obj/structure/rack,
-/turf/open/floor/plating/plating_catwalk,
-/area/mainship/hallways/hangar)
 "cJu" = (
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/cmo_office)
@@ -9002,20 +8982,6 @@
 "eRE" = (
 /turf/open/floor/carpet,
 /area/mainship/living/commandbunks)
-"eRO" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/refuel_station,
-/turf/open/floor/plating/plating_catwalk,
-/area/mainship/hallways/hangar)
 "eSg" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -9156,6 +9122,7 @@
 	pixel_x = -25;
 	pixel_y = 8
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/mainship/sterile/side{
 	dir = 8
 	},
@@ -9929,20 +9896,6 @@
 /obj/machinery/vending/weapon,
 /turf/open/floor/mainship/mono,
 /area/mainship/living/numbertwobunks)
-"glx" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/structure/reagent_dispensers/fueltank/cas_fuel,
-/turf/open/floor/plating/plating_catwalk,
-/area/mainship/hallways/hangar)
 "gmy" = (
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plating/plating_catwalk,
@@ -10797,7 +10750,7 @@
 "hBs" = (
 /obj/machinery/optable,
 /obj/item/tank/anesthetic,
-/obj/item/reagent_containers/blood/OMinus,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_one)
 "hCr" = (
@@ -10994,18 +10947,14 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/hallways/aft_umbilical)
 "hVR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/plating_catwalk,
+/obj/item/reagent_containers/jerrycan,
+/obj/item/reagent_containers/jerrycan,
+/obj/item/reagent_containers/jerrycan,
+/obj/item/reagent_containers/jerrycan,
+/obj/item/reagent_containers/jerrycan,
+/obj/item/reagent_containers/jerrycan,
+/obj/structure/rack,
+/turf/open/floor/mainship/cargo,
 /area/mainship/hallways/hangar)
 "hVU" = (
 /obj/machinery/light/mainship{
@@ -17419,6 +17368,7 @@
 	pixel_x = -25;
 	pixel_y = 8
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/mainship/sterile/side{
 	dir = 8
 	},
@@ -17745,7 +17695,7 @@
 "sOM" = (
 /obj/machinery/optable,
 /obj/item/tank/anesthetic,
-/obj/item/reagent_containers/blood/OMinus,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/medical/operating_room_four)
 "sPk" = (
@@ -18640,18 +18590,8 @@
 	},
 /area/mainship/hallways/hangar)
 "ugr" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating/plating_catwalk,
+/turf/open/floor/mainship/cargo,
 /area/mainship/hallways/hangar)
 "ugw" = (
 /obj/machinery/vending/armor_supply,
@@ -20290,7 +20230,7 @@
 "xcs" = (
 /obj/structure/table/mainship/nometal,
 /obj/item/storage/firstaid/regular,
-/obj/item/big_ammo_box/shotgun/blank,
+/obj/item/shotgunbox/blank,
 /turf/open/floor/mainship/red{
 	dir = 5
 	},
@@ -41682,11 +41622,11 @@ bCK
 bCK
 bCK
 bCK
-oer
+hVR
 sTv
 gfu
 bgb
-eRO
+bbR
 dXn
 blA
 blA
@@ -41940,10 +41880,10 @@ ann
 bdj
 mJs
 olO
-oer
 yiQ
+ugr
 bgb
-glx
+bbR
 dXn
 blA
 blA
@@ -43485,7 +43425,7 @@ kCI
 dZK
 dZK
 bgb
-cIC
+bbR
 dXn
 blA
 blA
@@ -43734,15 +43674,15 @@ aaa
 aai
 tDH
 bgb
-oer
-oer
+ugr
+ugr
 oer
 bhh
 oer
 dZK
 dZK
 bgb
-ugr
+xQe
 dXn
 blA
 blA
@@ -43999,7 +43939,7 @@ bgb
 bgb
 bgb
 bgb
-hVR
+wxQ
 dXn
 blA
 blA

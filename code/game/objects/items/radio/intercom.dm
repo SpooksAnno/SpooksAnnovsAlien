@@ -17,24 +17,19 @@
 
 /obj/item/radio/intercom/Initialize(mapload)
 	. = ..()
-	setDir(dir)
+	switch(dir)
+		if(NORTH)
+			pixel_y = -32
+		if(SOUTH)
+			pixel_y = 32
+		if(EAST)
+			pixel_x = -32
+		if(WEST)
+			pixel_x = 32
 	START_PROCESSING(SSobj, src)
 	become_hearing_sensitive()
 	check_light()
 
-/obj/item/radio/intercom/setDir(newdir)
-	. = ..()
-	pixel_w = 0
-	pixel_z = 0
-	switch(dir)
-		if(NORTH)
-			pixel_z = -25
-		if(SOUTH)
-			pixel_z = 32
-		if(EAST)
-			pixel_w = -32
-		if(WEST)
-			pixel_w = 30
 
 /obj/item/radio/intercom/Destroy()
 	STOP_PROCESSING(SSobj, src)

@@ -29,6 +29,9 @@
 
 /obj/structure/sensor_tower/Initialize(mapload)
 	. = ..()
+	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ENCOUNTER))
+		new /obj/structure/campaign_objective/capture_objective/sensor_tower(loc)
+		qdel(src)
 	name += " " + num2text(id)
 	towerid = id
 	id++
@@ -38,7 +41,7 @@
 	. = ..()
 	icon_state = initial(icon_state)
 	if(current_timer || activated)
-		icon_state += "_tgmc"
+		icon_state += "_TerraGov"
 
 /obj/structure/sensor_tower/attack_hand(mob/living/user)
 	if(!ishuman(user))
@@ -171,6 +174,6 @@
 /obj/structure/sensor_tower/proc/update_control_minimap_icon()
 	SSminimaps.remove_marker(src)
 	if(activated)
-		SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, "relay_[towerid]_on_full", MINIMAP_PRIORITY_LAYER))
+		SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, "relay_[towerid]_on_full", MINIMAP_LABELS_LAYER))
 	else
-		SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, "relay_[towerid][current_timer ? "_on" : "_off"]", MINIMAP_PRIORITY_LAYER))
+		SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips.dmi', null, "relay_[towerid][current_timer ? "_on" : "_off"]", MINIMAP_LABELS_LAYER))

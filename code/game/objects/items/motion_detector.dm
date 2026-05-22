@@ -73,7 +73,6 @@
 	var/range = 16
 	///The list of all the blips
 	var/list/obj/effect/blip/blips_list = list()
-	var/quiet = FALSE
 
 /obj/item/attachable/motiondetector/Destroy()
 	operator = null
@@ -162,12 +161,11 @@
 		if(nearby_xeno.last_move_time + effective_sensitivity < world.time )
 			continue
 		prepare_blip(nearby_xeno, nearby_xeno.get_iff_signal() & operator.get_iff_signal() ?  MOTION_DETECTOR_FRIENDLY : MOTION_DETECTOR_HOSTILE)
-	if(!quiet)
-		if(hostile_detected)
-			//playsound(loc, 'sound/items/tick.ogg', 100, 0, 7, 2)
-			playsound(loc, pick('ntf_modular/sound/items/detector_ping_1.ogg', 'ntf_modular/sound/items/detector_ping_2.ogg', 'ntf_modular/sound/items/detector_ping_3.ogg', 'ntf_modular/sound/items/detector_ping_4.ogg'), 60, 0, 7, 2)
-		else
-			playsound(loc, 'ntf_modular/sound/items/detector.ogg', 60, 0, 7, 2)
+	if(hostile_detected)
+		//playsound(loc, 'sound/items/tick.ogg', 100, 0, 7, 2)
+		playsound(loc, pick('ntf_modular/sound/items/detector_ping_1.ogg', 'ntf_modular/sound/items/detector_ping_2.ogg', 'ntf_modular/sound/items/detector_ping_3.ogg', 'ntf_modular/sound/items/detector_ping_4.ogg'), 60, 0, 7, 2)
+	else
+		playsound(loc, 'ntf_modular/sound/items/detector.ogg', 60, 0, 7, 2)
 
 	addtimer(CALLBACK(src, PROC_REF(clean_blips)), 1 SECONDS, TIMER_STOPPABLE|TIMER_DELETE_ME)
 

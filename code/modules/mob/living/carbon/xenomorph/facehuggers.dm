@@ -1031,8 +1031,4 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		return FALSE
 	return TRUE
 
-/obj/item/clothing/mask/facehugger/combat/harmless/attack_self(mob/user)
-	return
-
-#undef FACEHUGGER_DEATH
 #undef IMPREGNATION_TIME

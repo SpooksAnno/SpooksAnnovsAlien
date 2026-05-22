@@ -19,7 +19,11 @@
 	return SURGERY_CAN_USE
 
 /datum/surgery_step/face/cut_face
-	allowed_tools = SURGERY_TOOL_CUTTING
+	allowed_tools = list(
+		/obj/item/tool/surgery/scalpel = 100,
+		/obj/item/tool/kitchen/knife = 75,
+		/obj/item/shard = 50,
+	)
 
 	min_duration = FACIAL_CUT_MIN_DURATION
 	max_duration = FACIAL_CUT_MAX_DURATION
@@ -49,7 +53,12 @@
 
 
 /datum/surgery_step/face/mend_vocal
-	allowed_tools = SURGERY_TOOL_CLAMPING
+	allowed_tools = list(
+		/obj/item/tool/surgery/hemostat = 100,
+		/obj/item/stack/cable_coil = 75,
+		/obj/item/assembly/mousetrap = 10,
+	)
+
 	min_duration = FACIAL_MEND_MIN_DURATION
 	max_duration = FACIAL_MEND_MAX_DURATION
 	face_step = 1
@@ -107,7 +116,13 @@
 
 
 /datum/surgery_step/face/cauterize
-	allowed_tools = SURGERY_TOOL_CAUTERIZING
+	allowed_tools = list(
+		/obj/item/tool/surgery/cautery = 100,
+		/obj/item/clothing/mask/cigarette = 75,
+		/obj/item/tool/lighter = 50,
+		/obj/item/tool/weldingtool = 25,
+	)
+
 	min_duration = FACIAL_CAUTERISE_MIN_DURATION
 	max_duration = FACIAL_CAUTERISE_MAX_DURATION
 	face_step = 3

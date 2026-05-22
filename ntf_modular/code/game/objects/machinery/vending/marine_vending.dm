@@ -2507,7 +2507,7 @@
 		),
 		"Specialized" = list(
 			/obj/item/weapon/gun/clf_heavyrifle = 2,
-			/obj/item/big_ammo_box/shotgun/clf_heavyrifle = 2,
+			/obj/item/shotgunbox/clf_heavyrifle = 2,
 			/obj/item/weapon/gun/flamer/big_flamer = 1,
 			/obj/item/ammo_magazine/flamer_tank/backtank = 1,
 		),

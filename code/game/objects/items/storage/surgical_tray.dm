@@ -8,6 +8,7 @@
 
 /obj/item/storage/surgical_tray/PopulateContents()
 	new /obj/item/tool/surgery/scalpel/manager(src)
+	new /obj/item/tool/surgery/scalpel(src)
 	new /obj/item/tool/surgery/hemostat(src)
 	new /obj/item/tool/surgery/retractor(src)
 	new /obj/item/tool/surgery/surgical_membrane(src)

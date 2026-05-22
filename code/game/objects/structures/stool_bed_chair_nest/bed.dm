@@ -126,8 +126,8 @@
 	. = ..()
 	if(!buckled_bodybag || buckled_bodybag.Move(loc, movement_dir, glide_size))
 		return TRUE
-	buckled_bodybag.forceMove(loc) //this should generally only happen in the bed itself is forcemoved, such as a shuttle
-	return TRUE
+	forceMove(buckled_bodybag.loc)
+	return FALSE
 
 /obj/structure/bed/roller/CanAllowThrough(atom/movable/mover, turf/target)
 	if(mover == buckled_bodybag)

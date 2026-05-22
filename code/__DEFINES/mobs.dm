@@ -6,8 +6,6 @@ GLOBAL_VAR_INIT(max_larva_count_per_mob, 3) //Added for adminbus reasons
 #define AI_VOX
 
 // Overlay Indexes
-#define HAIR_EMISSIVE_LAYER 43
-#define EYE_EMISSIVE_LAYER 42
 #define BODY_MARKINGS_EMISSIVE_LAYER 41
 #define ACCESSORY_FLUFF_LAYER 40
 #define ACCESSORY_ANTENNA_LAYER 39
@@ -50,7 +48,7 @@ GLOBAL_VAR_INIT(max_larva_count_per_mob, 3) //Added for adminbus reasons
 #define FIRE_LAYER 2 //If you're on fire
 #define LASER_LAYER 1 //For sniper targeting laser
 
-#define TOTAL_LAYERS 43
+#define TOTAL_LAYERS 41
 
 #define TOTAL_UNDERLAYS 4
 #define MOTH_WINGS_BEHIND_LAYER 1
@@ -582,8 +580,6 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 
 #define HIVE_CAN_HIJACK (1<<0)
 #define HIVE_CAN_COLLAPSE_FROM_SILO (1<<1)
-///All xenos in the hive can build, allows non building castes to not block building
-#define HIVE_ALL_CAN_BUILD (1<<1)
 
 #define XENO_PULL_CHARGE_TIME 2 SECONDS
 #define XENO_SLOWDOWN_REGEN 0.4

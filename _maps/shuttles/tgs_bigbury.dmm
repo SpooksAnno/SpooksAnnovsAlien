@@ -260,7 +260,7 @@
 "bd" = (
 /obj/machinery/optable,
 /obj/item/tank/anesthetic,
-/obj/item/reagent_containers/blood/OMinus,
+/obj/item/clothing/mask/breath/medical,
 /turf/open/floor/mainship/sterile/dark,
 /area/shuttle/canterbury/medical)
 "be" = (

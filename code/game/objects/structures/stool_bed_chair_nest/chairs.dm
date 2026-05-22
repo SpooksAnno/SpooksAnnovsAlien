@@ -21,8 +21,6 @@
 	max_integrity = 20
 	layer = BELOW_TABLE_LAYER
 	var/propelled = 0 //Check for fire-extinguisher-driven chairs
-	///Whether this chair can be rotated via verb
-	var/can_rotate = TRUE //this only exists because spriters don't add directional sprites to all chair types, which allows for exploits.
 
 //directional variants mostly used for random spawners
 /obj/structure/bed/chair/east
@@ -76,8 +74,6 @@
 	set category = "IC.Object"
 	set src in view(0)
 
-	if(!can_rotate)
-		return FALSE
 	var/mob/living/carbon/user = usr
 
 	if(!istype(user) || !isturf(user.loc) || user.incapacitated())
@@ -171,8 +167,6 @@
 	desc = "It looks comfy."
 	icon_state = "sofamiddle"
 	resistance_flags = XENO_DAMAGEABLE
-	can_rotate = FALSE
-
 /obj/structure/bed/chair/sofa/left
 	icon_state = "sofaend_left"
 
@@ -289,15 +283,16 @@
 
 /obj/structure/bed/chair/office/light
 	icon_state = "officechair_white"
+	anchored = FALSE
 
 /obj/structure/bed/chair/office/dark
 	icon_state = "officechair_dark"
+	anchored = FALSE
 
 /obj/structure/bed/chair/dropship
 	name = "dropship chair"
 	desc = "Holds you in place during high altitude drops."
 	icon_state = "shuttle_chair"
-	can_rotate = FALSE
 	/// Handles the chair buckle bars overlay
 	var/image/chairbar = null
 	buildstacktype = 0
@@ -569,4 +564,3 @@
 	buildstacktype = null
 	resistance_flags = UNACIDABLE
 	dir = WEST
-	can_rotate = FALSE

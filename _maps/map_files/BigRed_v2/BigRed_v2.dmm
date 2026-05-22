@@ -257,10 +257,6 @@
 "adZ" = (
 /turf/closed/wall/r_wall,
 /area/bigredv2/caves/lambda_lab)
-"aeg" = (
-/obj/structure/transmitter/colony_net/auto_id,
-/turf/closed/wall,
-/area/bigredv2/outside/engineering)
 "aer" = (
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window/colonyspawn,
 /turf/open/floor/plating,
@@ -4335,7 +4331,6 @@
 "aNg" = (
 /obj/structure/table,
 /obj/item/tool/surgery/surgicaldrill,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/tile/white,
 /area/bigredv2/outside/virology)
 "aNh" = (
@@ -5673,7 +5668,6 @@
 "bla" = (
 /obj/structure/table,
 /obj/machinery/light,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor,
 /area/bigredv2/outside/cargo)
 "ble" = (
@@ -7899,10 +7893,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/marking/asteroidwarning,
 /area/bigredv2/caves/lambda_lab)
-"cGw" = (
-/obj/docking_port/stationary/supplycolony,
-/turf/open/floor/mainship/empty,
-/area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "cGI" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/white,
@@ -8626,15 +8616,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/yellow/full,
 /area/bigredv2/outside/hydroponics)
-"elq" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/tile/vault{
-	dir = 8
-	},
-/area/bigredv2/outside/marshal_office)
 "elE" = (
 /obj/effect/landmark/weed_node,
 /turf/open/floor/podhatch/floor,
@@ -8693,13 +8674,6 @@
 /obj/effect/ai_node,
 /turf/open/floor/wood,
 /area/bigredv2/outside/bar)
-"eqk" = (
-/obj/structure/prop/mainship/railing{
-	dir = 4
-	},
-/obj/machinery/computer/supplycomp/colony,
-/turf/open/floor,
-/area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "erE" = (
 /turf/closed/wall/r_wall,
 /area/bigredv2/outside/w)
@@ -8788,10 +8762,6 @@
 	dir = 10
 	},
 /area/bigredv2/outside/c)
-"eDA" = (
-/obj/structure/transmitter/colony_net,
-/turf/closed/wall/r_wall,
-/area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "eEK" = (
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/east/garbledradio)
@@ -9789,10 +9759,6 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/marking/asteroidwarning,
 /area/bigredv2/outside/c)
-"gNW" = (
-/obj/structure/transmitter/colony_net,
-/turf/closed/wall,
-/area/bigredv2/outside/hydroponics)
 "gOu" = (
 /obj/machinery/door/poddoor/timed_late/containment/landing_zone/lz2,
 /turf/open/floor/plating/ground/mars/random/dirt,
@@ -9858,10 +9824,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ground/mars/random/sand,
 /area/bigredv2/outside/nw)
-"gTQ" = (
-/obj/structure/transmitter/colony_net,
-/turf/closed/wall/r_wall,
-/area/bigredv2/caves/lambda_lab)
 "gUD" = (
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/mars/random/cave,
@@ -10223,10 +10185,6 @@
 "hNA" = (
 /obj/structure/table/wood,
 /obj/item/clothing/head/det_hat,
-/obj/structure/transmitter/colony_net/desk{
-	phone_category = "Colony";
-	phone_id = "Marshall's office"
-	},
 /turf/open/floor/wood,
 /area/bigredv2/outside/marshal_office)
 "hOe" = (
@@ -10813,12 +10771,6 @@
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/east)
-"jcH" = (
-/obj/structure/prop/mainship/railing{
-	dir = 8
-	},
-/turf/open/floor,
-/area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "jdc" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -11512,10 +11464,6 @@
 /obj/effect/spawner/random/engineering/toolbox,
 /turf/open/floor/tile/darkish,
 /area/bigredv2/caves/lambda_lab)
-"koY" = (
-/obj/structure/transmitter/colony_net/auto_id,
-/turf/closed/wall/r_wall,
-/area/bigredv2/outside/space_port)
 "kpp" = (
 /obj/effect/turf_decal/sandedge{
 	dir = 8
@@ -12472,8 +12420,15 @@
 /turf/open/floor,
 /area/bigredv2/outside/filtration_plant)
 "mGB" = (
-/obj/effect/spawner/random/misc/structure/broken_reinforced_window/colonyspawn,
-/obj/effect/spawner/random/misc/structure/broken_reinforced_window/colonyspawn,
+/obj/item/shard,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/landmark/corpsespawner/security{
+	corpsebelt = /obj/item/weapon/gun/revolver/cmb;
+	corpsesuit = /obj/item/clothing/suit/storage/CMB;
+	corpseuniform = /obj/item/clothing/under/CM_uniform;
+	name = "Marshal Logan Bills"
+	},
+/obj/structure/window_frame/colony/reinforced,
 /turf/open/floor/plating,
 /area/bigredv2/outside/marshal_office)
 "mHh" = (
@@ -13119,7 +13074,8 @@
 /turf/open/floor/asteroidfloor,
 /area/bigredv2/outside/space_port)
 "oaq" = (
-/turf/open/floor/mainship/empty,
+/obj/machinery/light,
+/turf/open/floor,
 /area/bigredv2/outside/nanotrasen_lab/inside/garbledradio)
 "obc" = (
 /obj/machinery/light{
@@ -14568,10 +14524,6 @@
 	dir = 1
 	},
 /area/bigredv2/outside/space_port)
-"rpr" = (
-/obj/structure/transmitter/colony_net/auto_id,
-/turf/closed/wall/r_wall,
-/area/bigredv2/outside/marshal_office)
 "rpO" = (
 /obj/structure/toilet{
 	pixel_y = 8
@@ -15227,12 +15179,6 @@
 	dir = 10
 	},
 /area/bigredv2/outside/space_port)
-"sNE" = (
-/obj/structure/table/wood,
-/obj/item/ashtray/glass,
-/obj/structure/transmitter/colony_net/desk/auto_id,
-/turf/open/floor/wood,
-/area/bigredv2/outside/bar)
 "sNF" = (
 /turf/open/floor/plating/ground/mars/random/cave/rock,
 /area/bigredv2/caves/west)
@@ -15384,10 +15330,6 @@
 "tgz" = (
 /obj/structure/table/wood,
 /obj/item/clothing/suit/storage/lawyer/bluejacket,
-/obj/structure/transmitter/colony_net/desk{
-	phone_category = "Colony";
-	phone_id = "Security Offices"
-	},
 /turf/open/floor/wood,
 /area/bigredv2/outside/marshal_office)
 "thx" = (
@@ -15416,10 +15358,6 @@
 /obj/effect/spawner/random/misc/structure/stool,
 /obj/effect/landmark/weed_node,
 /turf/open/floor/wood,
-/area/bigredv2/outside/dorms)
-"tnS" = (
-/obj/structure/transmitter/colony_net,
-/turf/closed/wall,
 /area/bigredv2/outside/dorms)
 "toK" = (
 /obj/effect/landmark/weed_node,
@@ -16010,14 +15948,6 @@
 /obj/effect/landmark/lv624/fog_blocker,
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/bigredv2/caves/lambda_lab)
-"uAh" = (
-/obj/structure/table/wood,
-/obj/structure/transmitter/colony_net/desk{
-	phone_category = "Colony";
-	phone_id = "Courtroom"
-	},
-/turf/open/floor/engine/cult,
-/area/bigredv2/outside/marshal_office)
 "uCj" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -16068,10 +15998,6 @@
 "uGU" = (
 /obj/structure/table,
 /obj/effect/spawner/random/misc/handcuffs,
-/obj/structure/transmitter/colony_net/desk{
-	phone_category = "Colony";
-	phone_id = "Warden"
-	},
 /turf/open/floor/tile/dark,
 /area/bigredv2/outside/marshal_office)
 "uHa" = (
@@ -16147,10 +16073,6 @@
 	dir = 8
 	},
 /area/bigredv2/outside/marshal_office)
-"uNc" = (
-/obj/structure/transmitter/colony_net,
-/turf/closed/wall,
-/area/bigredv2/outside/nanotrasen_lab/inside)
 "uNS" = (
 /obj/structure/cable,
 /turf/open/floor,
@@ -16548,16 +16470,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor,
 /area/bigredv2/outside/hydroponics)
-"vDT" = (
-/obj/effect/landmark/corpsespawner/security{
-	corpsebelt = /obj/item/weapon/gun/revolver/cmb;
-	corpsesuit = /obj/item/clothing/suit/storage/CMB;
-	corpseuniform = /obj/item/clothing/under/CM_uniform;
-	name = "Marshal Logan Bills"
-	},
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plating/ground/mars/random/sand,
-/area/bigredv2/outside/n)
 "vEx" = (
 /obj/structure/cable,
 /turf/open/floor/tile/dark/blue2{
@@ -28191,7 +28103,7 @@ qqG
 qqG
 fxs
 buO
-aeg
+bmk
 hwc
 hwc
 bmk
@@ -28493,7 +28405,7 @@ axl
 gCQ
 gCQ
 rGY
-koY
+dHg
 pXt
 pXt
 pXt
@@ -30779,7 +30691,7 @@ boI
 hwc
 hwc
 bor
-aeg
+bmk
 pqs
 pqs
 pqs
@@ -32848,7 +32760,7 @@ axl
 qEU
 acp
 acp
-rpr
+acp
 nch
 pyd
 eaq
@@ -35679,7 +35591,7 @@ gzM
 acp
 pUl
 wNy
-elq
+pUl
 nQj
 acp
 vNW
@@ -37761,7 +37673,7 @@ tBb
 uFI
 dnx
 wtn
-eqk
+uFI
 uqF
 bzp
 mRr
@@ -37978,7 +37890,7 @@ uFI
 bxU
 uFI
 byw
-oaq
+eVV
 uqF
 uPO
 mRr
@@ -38195,7 +38107,7 @@ uFI
 bxV
 jgh
 kSW
-cGw
+dnx
 uqF
 bzp
 uTU
@@ -38629,7 +38541,7 @@ sXc
 avx
 uFI
 uFI
-jcH
+jgh
 uqF
 bzp
 bzx
@@ -38934,7 +38846,7 @@ adW
 foI
 afs
 adW
-rpr
+acp
 lGe
 lGe
 luR
@@ -39144,7 +39056,7 @@ gCQ
 iOc
 gCQ
 gzM
-vDT
+gzM
 mGB
 adW
 nRw
@@ -40028,7 +39940,7 @@ ajQ
 akt
 acp
 tbH
-uAh
+kvl
 snO
 kvl
 jgD
@@ -41449,7 +41361,7 @@ mRs
 mRs
 mRs
 mRs
-eDA
+mRs
 ipt
 bzf
 mRs
@@ -41693,7 +41605,7 @@ bxN
 bxN
 bxN
 bxN
-uNc
+bxN
 jPZ
 bDY
 bxN
@@ -42652,7 +42564,7 @@ aaa
 aaa
 aaa
 aaa
-tnS
+asH
 atY
 atY
 atY
@@ -44399,7 +44311,7 @@ azb
 azb
 azb
 azb
-sNE
+iON
 vZN
 odc
 blL
@@ -49170,7 +49082,7 @@ sEz
 sEz
 aEY
 sEz
-gNW
+aBv
 nRA
 nkc
 aKI
@@ -57829,7 +57741,7 @@ afv
 afv
 afv
 adZ
-gTQ
+adZ
 ast
 jGA
 ssU

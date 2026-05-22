@@ -135,8 +135,6 @@
 			data["r_eyes"] = r_eyes
 			data["g_eyes"] = g_eyes
 			data["b_eyes"] = b_eyes
-			data["hair_emissive"] = hair_emissive
-			data["eye_emissive"] = eye_emissive
 			data["real_name"] = real_name
 			data["body_color"] = body_color
 			data["genitalia_ass_color"] = genitalia_ass_color
@@ -176,7 +174,6 @@
 			data["h_style"] = h_style
 			data["grad_style"] = grad_style
 			data["f_style"] = f_style
-			data["blood_color"] = blood_color
 		if(BACKGROUND_INFORMATION)
 			data["age"] = age
 			data["citizenship"] = citizenship
@@ -574,24 +571,6 @@
 			SStgui.update_uis(src)
 			SEND_SIGNAL(current_client, COMSIG_CLIENT_PREFERENCES_UIACTED)
 			return TRUE
-		if("toggle_hair_emissive")
-			hair_emissive = !hair_emissive
-			update_preview_icon()
-			save_preferences()
-			save_character()
-			save_keybinds()
-			SStgui.update_uis(src)
-			SEND_SIGNAL(current_client, COMSIG_CLIENT_PREFERENCES_UIACTED)
-			return TRUE
-		if("toggle_eye_emissive")
-			eye_emissive = !eye_emissive
-			update_preview_icon()
-			save_preferences()
-			save_character()
-			save_keybinds()
-			SStgui.update_uis(src)
-			SEND_SIGNAL(current_client, COMSIG_CLIENT_PREFERENCES_UIACTED)
-			return TRUE
 		if("xeno_name")
 			var/newValue = params["newValue"]
 			if(newValue == "")
@@ -649,8 +628,6 @@
 				digitigrade_legs = "Normal"
 			if(should_refresh_species_body_color(old_species, S))
 				body_color = S.flesh_color
-			if(!isnull(S.species_description))
-				to_chat(user, span_notice("Species information: [S.species_description]"))
 			real_name = S.random_name(gender)
 			update_preview_icon()
 
@@ -1373,13 +1350,6 @@
 
 		if("hear_ooc_anywhere_as_staff")
 			hear_ooc_anywhere_as_staff = !hear_ooc_anywhere_as_staff
-
-		if("bloodcolor")
-			var/bloodcolor = input(user, "Choose your character's blood colour:", "Character Preference") as null|color
-			if(!bloodcolor)
-				return
-			blood_color = bloodcolor
-			update_preview_icon()
 
 		else //  Handle the unhandled cases
 			return

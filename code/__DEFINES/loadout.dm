@@ -768,9 +768,6 @@ GLOBAL_LIST_INIT(loadout_linked_vendor, list(
 	SHIP_TECH = list(
 		/obj/machinery/vending/engivend/ntf,
 	),
-	SYNTHETIC = list(
-		/obj/machinery/vending/medical/shipside,
-	),
 	VENDOR_FACTION_CRASH = list(
 		/obj/machinery/vending/weapon/crash,
 		/obj/machinery/vending/uniform_supply,

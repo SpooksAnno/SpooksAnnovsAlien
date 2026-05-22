@@ -19,7 +19,6 @@
 	var/g_hair = 0
 	var/b_hair = 0
 	var/h_style = "Crewcut"
-	var/hair_emissive = FALSE
 
 	// Gradient color and style
 	var/r_grad = 0
@@ -37,7 +36,6 @@
 	var/r_eyes = 0
 	var/g_eyes = 0
 	var/b_eyes = 0
-	var/eye_emissive = FALSE
 
 	///The character's ethnicity
 	var/ethnicity = "Western"

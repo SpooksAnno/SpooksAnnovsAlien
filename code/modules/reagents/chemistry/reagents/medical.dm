@@ -1543,29 +1543,3 @@
 	fadein = 5
 	friction = generator(GEN_NUM, 0.1, 0.15)
 	position = generator(GEN_SQUARE, 0, 16)
-
-/datum/reagent/medicine/regeneration
-	name = "Regeneration"
-	description = "A natural regeneration caused by will or some other power."
-	color = COLOR_GREEN
-	overdose_threshold = REAGENTS_OVERDOSE * 4
-	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL * 4
-	reagent_ui_priority = REAGENT_UI_BKTT
-	custom_metabolism = REAGENTS_METABOLISM
-
-/datum/reagent/medicine/regen/on_mob_life(mob/living/L, metabolism)
-	effect_str = min(4,max(1, volume/15))
-	custom_metabolism = REAGENTS_METABOLISM*max(1, volume/15)
-	var/target_temp = L.get_standard_bodytemperature()
-	L.adjustOxyLoss(-0.25*effect_str)
-	L.adjustToxLoss(-0.2*effect_str)
-	L.heal_overall_damage(effect_str*2, effect_str*2)
-	if(L.bodytemperature > target_temp)
-		L.adjust_bodytemperature(-2.5*TEMPERATURE_DAMAGE_COEFFICIENT*effect_str, target_temp)
-	return ..()
-
-/datum/reagent/medicine/regen/overdose_process(mob/living/L, metabolism)
-	L.apply_damage(effect_str, BURN)
-
-/datum/reagent/medicine/regen/overdose_crit_process(mob/living/L, metabolism)
-	L.apply_damages(effect_str, 3*effect_str, 2*effect_str)

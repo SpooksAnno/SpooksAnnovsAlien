@@ -66,7 +66,6 @@
 "au" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/baton,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/tile/dark/red2{
 	dir = 10
 	},
@@ -97,14 +96,6 @@
 	},
 /turf/open/floor/tile/darkish,
 /area/lv624/lazarus/research/caves)
-"az" = (
-/obj/structure/cable,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 1;
-	pixel_y = -28
-	},
-/turf/open/floor/wood,
-/area/lv624/lazarus/chapel)
 "aA" = (
 /obj/item/spacecash/c10{
 	pixel_x = -6;
@@ -537,15 +528,6 @@
 /obj/effect/landmark/weed_node,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/engineering)
-"cL" = (
-/obj/effect/turf_decal/warning_stripes/thin{
-	dir = 1
-	},
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/plating,
-/area/lv624/lazarus/spaceport2)
 "cM" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
 /obj/effect/landmark/weed_node,
@@ -691,13 +673,6 @@
 	dir = 9
 	},
 /area/lv624/lazarus/sleep_male)
-"dA" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
-/turf/open/floor/tile/bar,
-/area/lv624/lazarus/fitness)
 "dB" = (
 /obj/structure/flora/ausbushes/fernybush{
 	pixel_y = 9
@@ -910,7 +885,6 @@
 "ey" = (
 /obj/structure/table,
 /obj/item/moneybag/vault,
-/obj/structure/transmitter/colony_net/desk/auto_id,
 /turf/open/floor/tile/dark/purple2,
 /area/lv624/lazarus/research/caves)
 "eA" = (
@@ -2198,13 +2172,6 @@
 	},
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable,
 /area/lv624/ground/jungle5)
-"kc" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 1;
-	pixel_y = -28
-	},
-/turf/open/floor/tile/blue,
-/area/lv624/lazarus/medbay)
 "kd" = (
 /obj/effect/ai_node,
 /turf/open/floor/plating/ground/dirt,
@@ -2528,13 +2495,6 @@
 	},
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/engineering)
-"lN" = (
-/obj/structure/cable,
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/wood,
-/area/lv624/lazarus/bar)
 "lO" = (
 /obj/machinery/power/geothermal,
 /obj/machinery/light{
@@ -3504,14 +3464,6 @@
 	dir = 5
 	},
 /area/lv624/lazarus/spaceport2)
-"qx" = (
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
-/turf/open/floor/tile/red/redtaupe{
-	dir = 1
-	},
-/area/lv624/lazarus/security)
 "qy" = (
 /turf/open/floor/plating/icefloor/warnplate{
 	dir = 6
@@ -4727,10 +4679,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 8;
-	pixel_x = 14
-	},
 /turf/open/floor/tile/white,
 /area/lv624/lazarus/hydroponics)
 "wr" = (
@@ -4825,9 +4773,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/transmitter/colony_net/auto_id{
-	pixel_y = 24
-	},
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/medbay)
 "wO" = (
@@ -6812,11 +6757,6 @@
 /obj/effect/landmark/sensor_tower,
 /turf/open/floor/tile/dark,
 /area/lv624/lazarus/engineering)
-"Gg" = (
-/obj/structure/table/wood,
-/obj/structure/transmitter/colony_net/desk/auto_id,
-/turf/open/floor/wood,
-/area/lv624/lazarus/captain)
 "Gh" = (
 /obj/structure/table,
 /obj/effect/spawner/random/weaponry/gun,
@@ -11169,10 +11109,6 @@
 /area/lv624/lazarus/spaceport2)
 "ZJ" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-/obj/structure/transmitter/colony_net/auto_id{
-	dir = 4;
-	pixel_x = -14
-	},
 /turf/open/floor/tile/green/whitegreencorner{
 	dir = 8
 	},
@@ -13496,7 +13432,7 @@ PX
 pG
 En
 Id
-dA
+PX
 gj
 wM
 wM
@@ -13921,7 +13857,7 @@ RW
 IM
 ZE
 ZE
-kc
+ZE
 mu
 Kd
 JY
@@ -13944,7 +13880,7 @@ wM
 wM
 Zu
 uw
-cL
+dF
 fn
 GF
 GF
@@ -14947,7 +14883,7 @@ mM
 jp
 PW
 wF
-az
+TJ
 iV
 Om
 wh
@@ -15708,7 +15644,7 @@ Om
 zx
 SK
 EP
-lN
+Zn
 VY
 mK
 vM
@@ -16779,7 +16715,7 @@ ft
 GQ
 ft
 gc
-qx
+QQ
 yZ
 jO
 bH
@@ -18717,7 +18653,7 @@ WX
 jx
 Xk
 aM
-Gg
+cX
 hN
 cr
 jx

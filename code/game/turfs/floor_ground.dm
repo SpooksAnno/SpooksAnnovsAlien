@@ -452,5 +452,3 @@
 	mediumxenofootstep = FOOTSTEP_CATWALK
 	barefootstep = FOOTSTEP_CATWALK
 	shoefootstep = FOOTSTEP_CATWALK
-	breakable_tile = FALSE
-	burnable_tile = FALSE

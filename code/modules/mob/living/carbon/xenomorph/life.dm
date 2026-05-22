@@ -129,7 +129,7 @@
 		else
 			use_plasma(pheromone_cost * seconds_per_tick * XENO_PER_SECOND_LIFE_MOD, FALSE)
 
-	if(HAS_TRAIT(src, TRAIT_NOPLASMAREGEN) || (!loc_weeds_type && !(xeno_caste.caste_flags & CASTE_INNATE_PLASMA_REGEN) && !weedless_regen && !CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ENCOUNTER)))
+	if(HAS_TRAIT(src, TRAIT_NOPLASMAREGEN) || !loc_weeds_type && !(xeno_caste.caste_flags & CASTE_INNATE_PLASMA_REGEN) && !weedless_regen)
 		if(current_aura) //we only need to update if we actually used plasma from pheros
 			hud_set_plasma()
 		return

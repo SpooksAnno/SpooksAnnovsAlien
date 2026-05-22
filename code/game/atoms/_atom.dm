@@ -715,11 +715,8 @@ directive is properly returned.
 
 /atom/proc/max_stack_merging(obj/item/stack/S)
 	SHOULD_CALL_PARENT(TRUE)
-	var/list/max_list = list() //yes this is dumb, please do a better solution
-	SEND_SIGNAL(src, ATOM_MAX_STACK_MERGING, S, max_list)
-	if(length(max_list))
-		return max_list[1]
-	return 0
+	SEND_SIGNAL(src, ATOM_MAX_STACK_MERGING, S)
+	return FALSE //But if they do, limit is not an issue.
 
 /atom/proc/recalculate_storage_space()
 	SHOULD_CALL_PARENT(TRUE)
