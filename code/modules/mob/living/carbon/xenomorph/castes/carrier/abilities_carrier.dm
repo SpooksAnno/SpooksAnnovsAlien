@@ -124,7 +124,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 			fake.facehugger_register_source(xeno_owner)
 			fake.throw_at(get_step(A, pick(CARDINAL_ALL_DIRS)), CARRIER_HUGGER_THROW_DISTANCE, CARRIER_HUGGER_THROW_SPEED)
 			fake.color = gradient(initial(fake.color), initial(F.color), fake_hugger_gradiant_percentage)
-			fake.lifecycle = FACEHUGGER_DEATH/3
+			fake.lifecycle /= 3
 		xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] throws something towards \the [A]!"), \
 		span_xenowarning("We throw a facehugger towards \the [A]!"))
 		add_cooldown()

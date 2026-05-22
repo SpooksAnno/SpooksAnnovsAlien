@@ -28,8 +28,6 @@
 	///var/datum/campaign_mission/current_mission ///moved to game_mode base
 	///campaign stats organised by faction
 	////var/list/datum/faction_stats/stat_list = list() ///moved to game_mode base
-	///List of death times by ckey. Used for respawn time
-	var/list/player_death_times = list()
 	///List of timers to auto open the respawn window
 	var/list/respawn_timers = list()
 

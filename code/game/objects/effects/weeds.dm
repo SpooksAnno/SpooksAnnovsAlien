@@ -183,35 +183,6 @@
 		take_damage(max_integrity) // Ensure its destroyed
 		return
 
-///special behavior when atoms enter our loc
-/obj/alien/weeds/proc/on_loc_entered(datum/source, atom/movable/crosser)
-	SIGNAL_HANDLER
-	if(!isxeno(crosser))
-		return
-	if(!issamexenohive(crosser))
-		return
-	var/mob/living/carbon/xenomorph/xeno = crosser
-	xeno.next_move_slowdown += xeno?.xeno_caste?.weeds_speed_mod
-
-///Slows down non xeno crossers
-/obj/alien/weeds/proc/slow_down_crosser(atom/movable/crosser)
-	if(issamexenohive(crosser))
-		return
-	if(crosser.throwing || crosser.buckled)
-		return
-	if(crosser.pass_flags & PASS_LOW_STRUCTURE)
-		return
-	if(issealedvehicle(crosser))
-		var/obj/vehicle/sealed/vehicle = crosser
-		COOLDOWN_INCREMENT(vehicle, cooldown_vehicle_move, WEED_SLOWDOWN)
-		return
-	if(!isliving(crosser))
-		return
-	var/mob/living/carbon/human/victim = crosser
-	if(victim.lying_angle)
-		return
-	victim.next_move_slowdown += WEED_SLOWDOWN
-
 /obj/alien/weeds/sticky
 	name = "sticky weeds"
 	desc = "A layer of disgusting sticky slime, it feels like it's going to slow your movement down."
@@ -219,7 +190,7 @@
 
 /obj/alien/weeds/sticky/on_loc_entered(datum/source, atom/movable/crosser)
 	. = ..()
-	slow_down_crosser(crosser)
+	slow_down_crosser(crosser, WEED_SLOWDOWN)
 
 /obj/alien/weeds/resting
 	name = "resting weeds"
@@ -397,7 +368,7 @@
 
 /obj/alien/weeds/node/sticky/on_loc_entered(datum/source, atom/movable/crosser)
 	. = ..()
-	slow_down_crosser(crosser)
+	slow_down_crosser(crosser, WEED_SLOWDOWN)
 
 //Resting weed node
 /obj/alien/weeds/node/resting

@@ -75,7 +75,7 @@
 		update_icon()
 	if(!attached && !(stasis || no_activate))
 		activetimer = addtimer(CALLBACK(src, PROC_REF(go_active)), activate_time, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_DELETE_ME)
-		lifetimer = addtimer(CALLBACK(src, PROC_REF(check_lifecycle)), FACEHUGGER_DEATH, TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_DELETE_ME)
+		lifetimer = addtimer(CALLBACK(src, PROC_REF(check_lifecycle)), initial(lifecycle), TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_DELETE_ME)
 
 /obj/item/clothing/mask/facehugger/latching/try_impregnate(mob/living/carbon/human/target)
 	return
@@ -290,8 +290,6 @@
 		wearer.reagents.add_reagent(/datum/reagent/consumable/nutriment/cum/xeno/resin, 2)
 		wearer.sexcon.adjust_arousal(5)
 	wearer.sexcon.adjust_arousal(5)
-
-#undef FACEHUGGER_DEATH
 
 
 //lets change eggs to have a new state of maturity
