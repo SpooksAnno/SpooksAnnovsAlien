@@ -1,0 +1,4 @@
+author: "SpooksAnno"
+delete-after: True
+changes:
+  - bugfix: "Reduced input lag caused by human diagonal movement repeatedly refreshing directional overlays."
