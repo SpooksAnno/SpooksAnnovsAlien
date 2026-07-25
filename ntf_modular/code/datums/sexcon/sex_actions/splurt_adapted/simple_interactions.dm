@@ -34,7 +34,7 @@
 	continous = FALSE
 	stamina_cost = 0.1
 	check_incapacitated = FALSE
-	heal_sex = FALSE
+	heal_sex = TRUE
 	var/start_message
 	var/perform_message
 	var/finish_message
@@ -58,6 +58,7 @@
 	var/list/perform_sounds
 	var/perform_sound_volume = 20
 	var/replaced_by_base_action = FALSE
+	var/quick_heal_requires_target_pref = TRUE
 
 /datum/sex_action/simple_interaction/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(replaced_by_base_action)
@@ -135,6 +136,14 @@
 	var/message = sexcon_interaction_message(finish_message, user, target)
 	if(message)
 		user.visible_message(span_warning(message))
+
+/datum/sex_action/simple_interaction/can_heal(mob/living/carbon/user, mob/living/carbon/target, mob/living/action_target)
+	if(quick_heal_requires_target_pref \
+		&& user?.sexcon?.drain_style == SEX_DRAIN_STYLE_HEAL_TARGET \
+		&& action_target?.mind \
+		&& !(action_target.client?.prefs.quick_sex_flags & QUICK_SEX_HEAL))
+		return FALSE
+	return ..()
 
 /datum/sex_action/simple_interaction/cheer
 	name = "Cheer"

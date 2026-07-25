@@ -88,6 +88,9 @@
 /datum/sex_action/proc/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	return TRUE
 
+/datum/sex_action/proc/can_heal(mob/living/carbon/user, mob/living/carbon/target, mob/living/action_target)
+	return heal_sex
+
 /mob/living/proc/sexcon_has_penis(require_exposed = FALSE)
 	if(ishuman(src))
 		var/mob/living/carbon/human/human = src

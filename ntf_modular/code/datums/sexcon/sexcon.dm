@@ -394,7 +394,7 @@
 
 /datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
 	var/datum/sex_action/action = SEX_ACTION(current_action)
-	var/healing_amount = (action?.heal_sex) ? rand(1, 3) : 0
+	var/healing_amount = (action?.can_heal(user, target, action_target)) ? rand(1, 3) : 0
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed, healing_amount, user)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed, healing_amount, mob/living/blame_mob)
