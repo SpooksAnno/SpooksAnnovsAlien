@@ -2,6 +2,7 @@ GLOBAL_LIST_EMPTY(human_genitals_cache)
 
 #define GENITAL_REAR_NORTH_LAYER -(BODYPARTS_LAYER - 1.5)
 #define GENITAL_LAYER_BIAS 1
+#define GENITAL_LAYER_STEP 0.05
 
 #define GENITAL_POSITION_FRONT "front"
 #define GENITAL_POSITION_REAR "rear"
@@ -145,6 +146,60 @@ GLOBAL_LIST_EMPTY(human_genitals_cache)
 			return def
 	return null
 
+/proc/default_genital_layer_order()
+	var/list/layer_order = list()
+	for(var/datum/genital_visual/def in genital_visuals())
+		layer_order += def.style_var
+	return layer_order
+
+/mob/living/carbon/human/proc/ensure_genital_layer_order()
+	var/list/default_order = default_genital_layer_order()
+	if(!islist(genital_layer_order))
+		genital_layer_order = default_order.Copy()
+	else
+		for(var/style in genital_layer_order.Copy())
+			if(!(style in default_order))
+				genital_layer_order -= style
+		for(var/style in default_order)
+			if(!(style in genital_layer_order))
+				genital_layer_order += style
+	return genital_layer_order
+
+/mob/living/carbon/human/proc/genital_layer_rank(style)
+	var/list/layer_order = ensure_genital_layer_order()
+	var/rank = layer_order.Find(style)
+	if(!rank)
+		return length(layer_order)
+	return rank
+
+/mob/living/carbon/human/proc/move_genital_layer(style, direction)
+	var/list/layer_order = ensure_genital_layer_order()
+	var/current_index = layer_order.Find(style)
+	if(!current_index)
+		return FALSE
+	var/new_index = current_index + direction
+	if(new_index < 1 || new_index > length(layer_order))
+		return FALSE
+	var/other_style = layer_order[new_index]
+	layer_order[new_index] = style
+	layer_order[current_index] = other_style
+	update_genitals(FALSE)
+	return TRUE
+
+/mob/living/carbon/human/proc/genital_layer_data()
+	. = list()
+	var/list/layer_order = ensure_genital_layer_order()
+	for(var/index in 1 to length(layer_order))
+		var/style = layer_order[index]
+		if(!genital_visual_by_style(style))
+			continue
+		. += list(list(
+			"slot" = style,
+			"rank" = index,
+			"canMoveUp" = index > 1,
+			"canMoveDown" = index < length(layer_order),
+		))
+
 /proc/genital_overlay(icon_file, icon_state, draw_color, draw_layer)
 	var/mutable_appearance/overlay = mutable_appearance(icon_file, icon_state, draw_layer)
 	overlay.color = draw_color ? sanitize_character_recolor(draw_color) : null
@@ -199,7 +254,7 @@ GLOBAL_LIST_EMPTY(human_genitals_cache)
 
 	add_genital_overlay_if_exists(genital_layers, icon_file, icon_state, draw_color, draw_layer, owner, emissive_list, 1, emissive_visible)
 
-/proc/genital_draw_layer(datum/genital_visual/def, render_layer, direction)
+/proc/genital_draw_layer(datum/genital_visual/def, render_layer, direction, mob/living/carbon/human/owner)
 	var/base_layer
 	if(def.position == GENITAL_POSITION_REAR)
 		if(direction == NORTH)
@@ -210,7 +265,8 @@ GLOBAL_LIST_EMPTY(human_genitals_cache)
 		base_layer = visual_overlay_draw_layer(BODY_OVERLAY_LAYER_BEHIND)
 	else
 		base_layer = visual_overlay_draw_layer(render_layer)
-	return base_layer + GENITAL_LAYER_BIAS - def.layer_offset
+	var/order_offset = owner ? owner.genital_layer_rank(def.style_var) * GENITAL_LAYER_STEP : def.layer_offset
+	return base_layer + GENITAL_LAYER_BIAS - order_offset
 
 /proc/genital_emissive_visible(position, direction)
 	if(position == GENITAL_POSITION_FRONT && direction == NORTH)
@@ -368,7 +424,7 @@ GLOBAL_LIST_EMPTY(human_genitals_cache)
 	var/emissive_visible = genital_emissive_visible(def.position, dir)
 	for(var/render_layer in def.render_layers)
 		var/icon_state = genital_icon_state(def, style, render_size, render_layer, src)
-		var/draw_layer = genital_draw_layer(def, render_layer, dir)
+		var/draw_layer = genital_draw_layer(def, render_layer, dir, src)
 		add_genital_colored_overlay_if_exists(genital_layers, def.icon_file, icon_state, primary_color, draw_layer, secondary_color, src, emissive_list, emissive_visible)
 
 /mob/living/carbon/human/proc/update_genitals(save_character = TRUE)
@@ -383,7 +439,9 @@ GLOBAL_LIST_EMPTY(human_genitals_cache)
 	if(wear_suit && istype(wear_suit, /obj/item/clothing))
 		worn_suit = wear_suit
 
-	for(var/datum/genital_visual/def in genital_visuals())
+	var/list/layer_order = ensure_genital_layer_order()
+	for(var/style in layer_order)
+		var/datum/genital_visual/def = genital_visual_by_style(style)
 		add_genital_visual(genilist, def, genital_body_color, w_uniform, worn_suit)
 
 	overlays_standing[GENITAL_LAYER] = genilist
@@ -428,6 +486,7 @@ GLOBAL_LIST_EMPTY(human_genitals_cache)
 
 #undef GENITAL_REAR_NORTH_LAYER
 #undef GENITAL_LAYER_BIAS
+#undef GENITAL_LAYER_STEP
 
 #undef GENITAL_POSITION_FRONT
 #undef GENITAL_POSITION_REAR

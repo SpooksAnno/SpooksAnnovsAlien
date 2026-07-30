@@ -33,6 +33,12 @@ interface InputData {
   possibleBellyStates: string[];
   possibleTesticleStates: string[];
   possibleBoobSizes: string[];
+  layerOrder: {
+    slot: string;
+    rank: number;
+    canMoveUp: boolean;
+    canMoveDown: boolean;
+  }[];
 }
 
 export const GenitalMenu = (props: any, context: any) => {
@@ -60,25 +66,69 @@ export const GenitalMenu = (props: any, context: any) => {
     possibleBellyStates,
     possibleTesticleStates,
     possibleBoobSizes,
+    layerOrder,
   } = data;
 
+  const layerBySlot = Object.fromEntries(
+    (layerOrder || []).map((entry) => [entry.slot, entry]),
+  );
+
+  const layerButtons = (field: string) => {
+    const layer = layerBySlot[field];
+    return (
+      <Stack ml={1}>
+        <Stack.Item>
+          <Button
+            icon="arrow-up"
+            disabled={!layer?.canMoveUp}
+            tooltip="Move above nearby anatomy"
+            onClick={() =>
+              act('moveLayer', {
+                field,
+                direction: -1,
+              })
+            }
+          />
+        </Stack.Item>
+        <Stack.Item>
+          <Button
+            icon="arrow-down"
+            disabled={!layer?.canMoveDown}
+            tooltip="Move below nearby anatomy"
+            onClick={() =>
+              act('moveLayer', {
+                field,
+                direction: 1,
+              })
+            }
+          />
+        </Stack.Item>
+      </Stack>
+    );
+  };
+
   return (
-    <Window title="Genital selection" width={330} height={470}>
-      <Window.Content />
-      <Section>
-        <Stack fill vertical>
-          <Stack.Item>
-            <LabeledList>
+    <Window title="Genital selection" width={375} height={500}>
+      <Window.Content>
+        <Section>
+          <Stack fill vertical>
+            <Stack.Item>
+              <LabeledList>
               <LabeledList.Item label="Genitalia">
-                <Dropdown
-                  options={possibleCockStates}
-                  selected={cockState ? cockState : 'Default'}
-                  onSelected={(e: string) =>
-                    act('changeCock', {
-                      newState: e,
-                    })
-                  }
-                />
+                <Stack align="center">
+                  <Stack.Item grow>
+                    <Dropdown
+                      options={possibleCockStates}
+                      selected={cockState ? cockState : 'Default'}
+                      onSelected={(e: string) =>
+                        act('changeCock', {
+                          newState: e,
+                        })
+                      }
+                    />
+                  </Stack.Item>
+                  <Stack.Item>{layerButtons('cock')}</Stack.Item>
+                </Stack>
               </LabeledList.Item>
               {cockState && cockState !== 'Default' && cockState !== 'Human' ? (
                 <LabeledList.Item label="Penis Sheath">
@@ -105,15 +155,20 @@ export const GenitalMenu = (props: any, context: any) => {
                 />
               </LabeledList.Item>
               <LabeledList.Item label="Butt">
-                <Dropdown
-                  options={possibleAssStates}
-                  selected={assState ? assState : 'Default'}
-                  onSelected={(e: string) =>
-                    act('changeAss', {
-                      newState: e,
-                    })
-                  }
-                />
+                <Stack align="center">
+                  <Stack.Item grow>
+                    <Dropdown
+                      options={possibleAssStates}
+                      selected={assState ? assState : 'Default'}
+                      onSelected={(e: string) =>
+                        act('changeAss', {
+                          newState: e,
+                        })
+                      }
+                    />
+                  </Stack.Item>
+                  <Stack.Item>{layerButtons('ass')}</Stack.Item>
+                </Stack>
               </LabeledList.Item>
               <LabeledList.Item label="Butt Size">
                 <NumberInput
@@ -131,15 +186,20 @@ export const GenitalMenu = (props: any, context: any) => {
                 />
               </LabeledList.Item>
               <LabeledList.Item label="Boobs">
-                <Dropdown
-                  options={possibleBoobStates}
-                  selected={boobState ? boobState : 'Default'}
-                  onSelected={(e: string) =>
-                    act('changeBoobs', {
-                      newState: e,
-                    })
-                  }
-                />
+                <Stack align="center">
+                  <Stack.Item grow>
+                    <Dropdown
+                      options={possibleBoobStates}
+                      selected={boobState ? boobState : 'Default'}
+                      onSelected={(e: string) =>
+                        act('changeBoobs', {
+                          newState: e,
+                        })
+                      }
+                    />
+                  </Stack.Item>
+                  <Stack.Item>{layerButtons('boobs')}</Stack.Item>
+                </Stack>
               </LabeledList.Item>
               <LabeledList.Item label="Boob Size">
                 <Dropdown
@@ -154,26 +214,36 @@ export const GenitalMenu = (props: any, context: any) => {
                 />
               </LabeledList.Item>
               <LabeledList.Item label="Vagina">
-                <Dropdown
-                  options={possibleVaginaStates}
-                  selected={vaginaState ? vaginaState : 'Default'}
-                  onSelected={(e: string) =>
-                    act('changeVagina', {
-                      newState: e,
-                    })
-                  }
-                />
+                <Stack align="center">
+                  <Stack.Item grow>
+                    <Dropdown
+                      options={possibleVaginaStates}
+                      selected={vaginaState ? vaginaState : 'Default'}
+                      onSelected={(e: string) =>
+                        act('changeVagina', {
+                          newState: e,
+                        })
+                      }
+                    />
+                  </Stack.Item>
+                  <Stack.Item>{layerButtons('vagina')}</Stack.Item>
+                </Stack>
               </LabeledList.Item>
               <LabeledList.Item label="Testicles">
-                <Dropdown
-                  options={possibleTesticleStates}
-                  selected={testicleState ? testicleState : 'Default'}
-                  onSelected={(e: string) =>
-                    act('changeTesticles', {
-                      newState: e,
-                    })
-                  }
-                />
+                <Stack align="center">
+                  <Stack.Item grow>
+                    <Dropdown
+                      options={possibleTesticleStates}
+                      selected={testicleState ? testicleState : 'Default'}
+                      onSelected={(e: string) =>
+                        act('changeTesticles', {
+                          newState: e,
+                        })
+                      }
+                    />
+                  </Stack.Item>
+                  <Stack.Item>{layerButtons('testicles')}</Stack.Item>
+                </Stack>
               </LabeledList.Item>
               <LabeledList.Item label="Testicle Size">
                 <NumberInput
@@ -191,15 +261,20 @@ export const GenitalMenu = (props: any, context: any) => {
                 />
               </LabeledList.Item>
               <LabeledList.Item label="Belly">
-                <Dropdown
-                  options={possibleBellyStates}
-                  selected={bellyState ? bellyState : 'Default'}
-                  onSelected={(e: string) =>
-                    act('changeBelly', {
-                      newState: e,
-                    })
-                  }
-                />
+                <Stack align="center">
+                  <Stack.Item grow>
+                    <Dropdown
+                      options={possibleBellyStates}
+                      selected={bellyState ? bellyState : 'Default'}
+                      onSelected={(e: string) =>
+                        act('changeBelly', {
+                          newState: e,
+                        })
+                      }
+                    />
+                  </Stack.Item>
+                  <Stack.Item>{layerButtons('belly')}</Stack.Item>
+                </Stack>
               </LabeledList.Item>
               <LabeledList.Item label="Belly Size">
                 <NumberInput
@@ -231,25 +306,26 @@ export const GenitalMenu = (props: any, context: any) => {
                   }
                 />
               </LabeledList.Item>
-            </LabeledList>
-          </Stack.Item>
-          <Stack.Item>
-            <Button
-              fluid
-              bold
-              color="bad"
-              icon="ban"
-              fontSize={1.25}
-              textAlign="center"
-              onClick={() => {
-                act('reset');
-              }}
-            >
-              Reset to default
-            </Button>
-          </Stack.Item>
-        </Stack>
-      </Section>
+              </LabeledList>
+            </Stack.Item>
+            <Stack.Item>
+              <Button
+                fluid
+                bold
+                color="bad"
+                icon="ban"
+                fontSize={1.25}
+                textAlign="center"
+                onClick={() => {
+                  act('reset');
+                }}
+              >
+                Reset to default
+              </Button>
+            </Stack.Item>
+          </Stack>
+        </Section>
+      </Window.Content>
     </Window>
   );
 };

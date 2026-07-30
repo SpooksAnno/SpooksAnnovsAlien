@@ -77,6 +77,8 @@
 	var/burn_mod = null
 	///Stamina damage multiplier
 	var/stamina_mod = null
+	///Clone damage multiplier
+	var/clone_mod = null
 	///new max_stamina [/mob/living/var/max_stamina] of the human mob once species is applied
 	var/max_stamina = 50
 

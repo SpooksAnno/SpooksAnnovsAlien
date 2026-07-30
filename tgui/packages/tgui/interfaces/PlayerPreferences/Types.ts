@@ -8,6 +8,8 @@ type PlayerPreferencesData = {
 type CharacterCustomizationData = {
   random_name: number;
   gender: string;
+  xeno_gender: string;
+  xenogender: number;
   physique: string;
   h_style: string;
   r_hair: number;
@@ -89,6 +91,7 @@ type CharacterCreatorOptionRow = {
 type BackgroundInformationData = {
   slot: number;
   age: number;
+  custom_species_name: string;
   citizenship: string;
   religion: string;
   flavor_text: string;

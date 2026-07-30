@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button, LabeledList, Section, Stack, TextArea } from 'tgui-core/components';
+import { Box, Button, Input, LabeledList, Section, Stack, TextArea } from 'tgui-core/components';
 
 import { useBackend } from '../../backend';
 import { SelectFieldPreference, TextFieldPreference } from './FieldPreferences';
@@ -94,6 +94,7 @@ const PictureSection = ({
 export const BackgroundInformation = (props) => {
   const { act, data } = useBackend<BackgroundInformationData>();
   const {
+    custom_species_name,
     flavor_text,
     med_record,
     gen_record,
@@ -132,6 +133,15 @@ export const BackgroundInformation = (props) => {
         <Section title="Identity">
           <LabeledList>
             <TextFieldPreference label="Age" value="age" />
+            <LabeledList.Item label="Custom Species">
+              <Input
+                placeholder="Use mechanical species"
+                value={custom_species_name || ''}
+                onBlur={(newValue) =>
+                  act('custom_species_name', { newValue })
+                }
+              />
+            </LabeledList.Item>
             <SelectFieldPreference
               label="Citizenship"
               value="citizenship"

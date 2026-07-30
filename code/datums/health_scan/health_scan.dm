@@ -204,7 +204,7 @@
 		"hugged" = !!(patient.status_flags & XENO_HOST),
 
 		"species" = list(
-			"name" = patient.species?.name || "Unknown Species",
+			"name" = patient.get_species() || "Unknown Species",
 			// species types
 			"is_synthetic" = issynth(patient),
 			"is_combat_robot" = isrobot(patient),

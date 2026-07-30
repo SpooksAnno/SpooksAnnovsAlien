@@ -1539,8 +1539,14 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		return FALSE
 	if(X.status_flags & INCORPOREAL)
 		to_chat(X, span_warning("We can't do that while incorporeal."))
-	if(A.gender == X.gender && X.client?.prefs?.xenogender != 4)
-		to_chat(X, span_xenonotice("We can't get anywhere [A.gender == FEMALE ? "clam mashing." : "sword fighting."]."))
+	var/target_has_penis = A.gender == MALE
+	var/target_has_vagina = A.gender == FEMALE
+	if(isxeno(A))
+		var/mob/living/carbon/xenomorph/target_xeno = A
+		target_has_penis = target_xeno.has_xeno_penis()
+		target_has_vagina = target_xeno.has_xeno_vagina()
+	if(!(X.has_xeno_penis() && target_has_vagina) && !(X.has_xeno_vagina() && target_has_penis))
+		to_chat(X, span_xenonotice("We can't get anywhere without compatible anatomy."))
 		return FALSE
 	log_combat(X, A, "started to use their impregnate ability on")
 	X.visible_message(span_danger("[X] starts to fuck [A]!"), \
@@ -1563,7 +1569,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		owner.visible_message(span_warning("[X] fucks [victim]!"), span_warning("We fuck [victim]!"), span_warning("You hear slapping."), 5, victim)
 		if(victim.stat == CONSCIOUS)
 			to_chat(victim, span_warning("[X] fucks you!"))
-		if(X.client?.prefs?.xenogender > 2)
+		if(X.has_xeno_penis())
 			X.impregify(victim, HOLE_VAGINA, damagemult = 3)
 			log_combat(X, victim, "impregnated", addition="with their impregnate ability")
 		else
@@ -1598,9 +1604,9 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 		if(victim.stat == CONSCIOUS)
 			to_chat(victim, span_warning("[X] fucks you!"))
 			victim.emote("moan")
-		if(victim.gender == FEMALE && (SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
+		if(victim.has_xeno_vagina() && (SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
 			victim.xenoimpregify()
-		if(X.gender == FEMALE && (SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
+		if(X.has_xeno_vagina() && (SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
 			X.xenoimpregify()
 		succeed_activate()
 /////////////////////////////////

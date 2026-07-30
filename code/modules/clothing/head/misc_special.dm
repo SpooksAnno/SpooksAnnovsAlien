@@ -15,6 +15,7 @@
 	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
 	icon_state = "welding"
 	worn_icon_state = "welding"
+	worn_icon_muzzled = 'modular_skyrat/master_files/icons/mob/clothing/head_muzzled.dmi'
 	var/up = FALSE
 	soft_armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 	atom_flags = CONDUCT
@@ -134,4 +135,3 @@
 	armor_protection_flags = HEAD|EYES
 	w_class = WEIGHT_CLASS_NORMAL
 	anti_hug = 1
-

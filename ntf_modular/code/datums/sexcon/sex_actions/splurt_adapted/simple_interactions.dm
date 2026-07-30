@@ -59,9 +59,13 @@
 	var/perform_sound_volume = 20
 	var/replaced_by_base_action = FALSE
 	var/quick_heal_requires_target_pref = TRUE
+	/// How long this interaction locks both participants together. Used by knot actions.
+	var/knot_lock_duration = 0
 
 /datum/sex_action/simple_interaction/shows_on_menu(mob/living/carbon/user, mob/living/carbon/target)
 	if(replaced_by_base_action)
+		return FALSE
+	if(knot_lock_duration && !user.sexcon_allows_knotting_with(target))
 		return FALSE
 	if(self_only)
 		return user == target
@@ -73,6 +77,8 @@
 	if(self_only && user != target)
 		return FALSE
 	if(!allow_self && user == target)
+		return FALSE
+	if(knot_lock_duration && !user.sexcon_allows_knotting_with(target))
 		return FALSE
 	if(require_user_knot && !user.sexcon_has_knotted_penis(require_user_knot_exposed))
 		return FALSE
@@ -119,6 +125,8 @@
 	var/message = sexcon_interaction_message(start_message, user, target)
 	if(message)
 		user.visible_message(span_warning(message))
+	if(knot_lock_duration)
+		user.sexcon.start_knot_lock(target, knot_lock_duration)
 
 /datum/sex_action/simple_interaction/on_perform(mob/living/carbon/user, mob/living/carbon/target)
 	var/message = sexcon_interaction_message(perform_message, user, target)
@@ -613,6 +621,7 @@
 	require_user_knot = TRUE
 	require_target_vagina = TRUE
 	continous = TRUE
+	knot_lock_duration = 20 SECONDS
 	start_message = "%USER% presses %USER_THEIR% knot against %TARGET%'s pussy."
 	perform_message = "%USER% fucks %TARGET%'s pussy with %USER_THEIR% knot."
 	finish_message = "%USER% pulls away from %TARGET%."
@@ -624,6 +633,7 @@
 	name = "Anal Knotfuck"
 	require_user_knot = TRUE
 	continous = TRUE
+	knot_lock_duration = 20 SECONDS
 	start_message = "%USER% presses %USER_THEIR% knot against %TARGET%'s ass."
 	perform_message = "%USER% fucks %TARGET%'s ass with %USER_THEIR% knot."
 	finish_message = "%USER% pulls away from %TARGET%."
@@ -635,6 +645,7 @@
 	name = "Oral Knotfuck"
 	require_user_knot = TRUE
 	continous = TRUE
+	knot_lock_duration = 12 SECONDS
 	start_message = "%USER% presses %USER_THEIR% knot against %TARGET%'s mouth."
 	perform_message = "%USER% fucks %TARGET%'s mouth with %USER_THEIR% knot."
 	finish_message = "%USER% pulls away from %TARGET%'s mouth."
@@ -647,6 +658,7 @@
 	require_user_vagina = TRUE
 	require_target_knot = TRUE
 	continous = TRUE
+	knot_lock_duration = 20 SECONDS
 	start_message = "%USER% lowers %USER_THEIR% pussy over %TARGET%'s knot."
 	perform_message = "%USER% rides %TARGET%'s knot."
 	finish_message = "%USER% climbs off %TARGET%."
@@ -658,6 +670,7 @@
 	name = "Knotride (Anus)"
 	require_target_knot = TRUE
 	continous = TRUE
+	knot_lock_duration = 20 SECONDS
 	start_message = "%USER% lowers %USER_THEIR% ass over %TARGET%'s knot."
 	perform_message = "%USER% rides %TARGET%'s knot anally."
 	finish_message = "%USER% climbs off %TARGET%."

@@ -212,6 +212,7 @@ GLOBAL_LIST_INIT(breast_number_to_size, list(
 		"cockSize" = human.cock_size,
 		"bellySize" = human.belly_size,
 		"testicleSize" = human.testicles_size,
+		"layerOrder" = human.genital_layer_data(),
 	)
 	data["possibleCockStates"] = list()
 	for(var/entry in GLOB.possible_cock_sprites)
@@ -376,6 +377,14 @@ GLOBAL_LIST_INIT(breast_number_to_size, list(
 			human.update_genitals()
 			return TRUE
 
+		if("moveLayer")
+			var/style = params["field"]
+			var/direction = text2num("[params["direction"]]")
+			if(!direction)
+				return TRUE
+			human.move_genital_layer(style, direction)
+			return TRUE
+
 		if("reset")
 			human.boobs = null
 			human.ass = null
@@ -390,6 +399,7 @@ GLOBAL_LIST_INIT(breast_number_to_size, list(
 			human.cock_size = initial(human.cock_size)
 			human.belly_size = initial(human.belly_size)
 			human.testicles_size = initial(human.testicles_size)
+			human.genital_layer_order = null
 			human.client?.prefs?.genitalia_boobs = null
 			human.client?.prefs?.genitalia_ass = null
 			human.client?.prefs?.genitalia_cock = null

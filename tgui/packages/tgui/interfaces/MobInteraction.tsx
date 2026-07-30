@@ -45,6 +45,7 @@ type GenitalControl = {
   alwaysAccessible: boolean;
   canArouse: boolean;
   aroused: number;
+  layer: number;
 };
 
 type MobInteractionData = {
@@ -59,8 +60,10 @@ type MobInteractionData = {
   manualArousal: string;
   doUntilFinished: boolean;
   showUnavailableParts: boolean;
+  allowKnotting: boolean;
   isTargetAdjacent: boolean;
   currentAction: string | null;
+  knotLockStatus: string | null;
   canUseManualArousal: boolean;
   actions: SexAction[];
   genitals: GenitalField[];
@@ -90,8 +93,10 @@ export const MobInteraction = (_props: any) => {
     manualArousal,
     doUntilFinished,
     showUnavailableParts,
+    allowKnotting,
     isTargetAdjacent,
     currentAction,
+    knotLockStatus,
     canUseManualArousal,
     actions = [],
     genitals = [],
@@ -119,6 +124,10 @@ export const MobInteraction = (_props: any) => {
   );
   const filteredGenitalControls = genitalControls.filter((field) =>
     field.name.toLowerCase().includes(searchText.toLowerCase()),
+  );
+  const maxGenitalLayer = Math.max(
+    0,
+    ...genitalControls.map((field) => field.layer || 0),
   );
 
   return (
@@ -205,17 +214,38 @@ export const MobInteraction = (_props: any) => {
                     </Stack.Item>
                   </Stack>
                 </Stack.Item>
+                {!!knotLockStatus && (
+                  <Stack.Item>
+                    <Box color="orange">
+                      <Icon name="link" /> {knotLockStatus}
+                    </Box>
+                  </Stack.Item>
+                )}
                 <Stack.Item>
-                  <Button
-                    fluid
-                    icon={showUnavailableParts ? 'eye' : 'eye-slash'}
-                    selected={showUnavailableParts}
-                    onClick={() => act('toggle_unavailable_parts')}
-                  >
-                    {showUnavailableParts
-                      ? 'Showing Missing Parts'
-                      : 'Hiding Missing Parts'}
-                  </Button>
+                  <Stack fill>
+                    <Stack.Item grow>
+                      <Button
+                        fluid
+                        icon={showUnavailableParts ? 'eye' : 'eye-slash'}
+                        selected={showUnavailableParts}
+                        onClick={() => act('toggle_unavailable_parts')}
+                      >
+                        {showUnavailableParts
+                          ? 'Showing Missing Parts'
+                          : 'Hiding Missing Parts'}
+                      </Button>
+                    </Stack.Item>
+                    <Stack.Item grow>
+                      <Button
+                        fluid
+                        icon="link"
+                        selected={allowKnotting}
+                        onClick={() => act('toggle_knotting')}
+                      >
+                        {allowKnotting ? 'Knotting Enabled' : 'Knotting Disabled'}
+                      </Button>
+                    </Stack.Item>
+                  </Stack>
                 </Stack.Item>
               </Stack>
             </Section>
@@ -300,6 +330,32 @@ export const MobInteraction = (_props: any) => {
                           color={genital.active ? undefined : 'grey'}
                         >
                           <Stack justify="flex-end">
+                            <Stack.Item>
+                              <Button
+                                icon="arrow-up"
+                                disabled={genital.layer <= 1}
+                                tooltip="Move above nearby anatomy"
+                                onClick={() =>
+                                  act('move_genital_layer', {
+                                    genital: genital.slot,
+                                    direction: -1,
+                                  })
+                                }
+                              />
+                            </Stack.Item>
+                            <Stack.Item>
+                              <Button
+                                icon="arrow-down"
+                                disabled={genital.layer >= maxGenitalLayer}
+                                tooltip="Move below nearby anatomy"
+                                onClick={() =>
+                                  act('move_genital_layer', {
+                                    genital: genital.slot,
+                                    direction: 1,
+                                  })
+                                }
+                              />
+                            </Stack.Item>
                             <Stack.Item>
                               <Button
                                 icon={

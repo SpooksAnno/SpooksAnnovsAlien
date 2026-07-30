@@ -21,6 +21,7 @@ GLOBAL_VAR_INIT(max_larva_count_per_mob, 3) //Added for adminbus reasons
 #define HUMAN_BODY_STYLE_TGMC "TGMC"
 
 // Overlay Indexes
+#define ACCESSORY_SPINES_LAYER 47
 #define ACCESSORY_XENOHEAD_LAYER 46
 #define ACCESSORY_XENODORSAL_LAYER 45
 #define ACCESSORY_TAUR_LAYER 44
@@ -68,7 +69,7 @@ GLOBAL_VAR_INIT(max_larva_count_per_mob, 3) //Added for adminbus reasons
 #define FIRE_LAYER 2 //If you're on fire
 #define LASER_LAYER 1 //For sniper targeting laser
 
-#define TOTAL_LAYERS 46
+#define TOTAL_LAYERS 47
 
 #define TOTAL_UNDERLAYS 6
 #define MOTH_WINGS_BEHIND_LAYER 1

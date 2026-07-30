@@ -154,6 +154,7 @@
 	S["snout"] << "Missing Snout"
 	S["ears"] << "Missing Ears"
 	S["horns"] << "Missing Horns"
+	S["spines"] << "Missing Spines"
 	S["wings"] << "Missing Wings"
 	S["fluff"] << "Missing Fluff"
 	S["digitigrade_legs"] << "Broken Legs"

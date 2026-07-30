@@ -169,6 +169,8 @@
 	..()
 
 /mob/living/carbon/human/adjustCloneLoss(amount)
+	if(species?.clone_mod && amount > 0)
+		amount *= species.clone_mod
 	..()
 
 	/*

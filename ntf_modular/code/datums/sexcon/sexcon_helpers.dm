@@ -142,7 +142,7 @@
 		implant_embryo(victim, hole_target, source = src)
 
 /mob/living/carbon/xenomorph/proc/xenoimpregify()
-	if(!preggo && gender == FEMALE)
+	if(!preggo && has_xeno_vagina())
 /*		if(!(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES) && client?.prefs?.xenogender == 4) //futa
 			to_chat(src, span_alien("We can't bear larvas during war times, our mixed physiology makes it difficult."))
 			return FALSE*/

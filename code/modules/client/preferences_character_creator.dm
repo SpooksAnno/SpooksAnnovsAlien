@@ -24,6 +24,8 @@
 			return GLOB.ears_list
 		if("horns")
 			return GLOB.horns_list
+		if("spines")
+			return GLOB.spines_list
 		if("wings")
 			return GLOB.wings_list
 		if("synth_antenna")
@@ -52,6 +54,8 @@
 			return list("label" = "Ears", "group" = "head_parts", "pref" = "ears", "values" = character_creator_name_options(GLOB.ears_list), "fallback" = "None", "colors" = 3)
 		if("horns")
 			return list("label" = "Horns", "group" = "head_parts", "pref" = "horns", "values" = character_creator_name_options(GLOB.horns_list), "fallback" = "None", "colors" = 3)
+		if("spines")
+			return list("label" = "Spines", "group" = "head_parts", "pref" = "spines", "values" = character_creator_name_options(GLOB.spines_list), "fallback" = "None")
 		if("wings")
 			return list("label" = "Wings", "group" = "back_tail", "pref" = "wings", "values" = character_creator_name_options(GLOB.wings_list), "fallback" = "None", "colors" = 3)
 		if("synth_antenna")
@@ -67,7 +71,7 @@
 	return null
 
 /datum/preferences/proc/character_creator_part_ids()
-	return list("digitigrade_legs", "moth_wings", "taur_body", "xenodorsal", "xenohead", "tail", "snout", "ears", "horns", "synth_antenna", "wings", "fluff")
+	return list("digitigrade_legs", "moth_wings", "taur_body", "xenodorsal", "xenohead", "tail", "snout", "ears", "horns", "spines", "synth_antenna", "wings", "fluff")
 
 /datum/preferences/proc/normalize_character_creator_parts(changed_field)
 	if(changed_field == "digitigrade_legs" && digitigrade_legs && digitigrade_legs != "Normal")
@@ -86,6 +90,14 @@
 	for(var/entry in options)
 		named_options["[entry]"] = "[entry]"
 	return named_options
+
+/datum/preferences/proc/xeno_gender_from_anatomy()
+	switch(sanitize_integer(xenogender, 1, 4, initial(xenogender)))
+		if(2, 4)
+			return FEMALE
+		if(3)
+			return MALE
+	return NEUTER
 
 /datum/preferences/proc/character_creator_accessory_color_label(accessory, color_index)
 	var/list/part_definition = character_creator_part_definition(accessory)

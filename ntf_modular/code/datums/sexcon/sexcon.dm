@@ -29,17 +29,79 @@
 	var/last_pain = 0
 	var/msg_signature = ""
 	var/last_msg_signature = 0
+	/// Mob we are temporarily locked to by a knot action.
+	var/mob/living/knot_locked_partner
+	/// World time when the knot lock can be voluntarily stopped.
+	var/knot_locked_until = 0
 
 /datum/sex_controller/New(mob/living/owner)
 	user = owner
 
 /datum/sex_controller/Destroy()
+	clear_knot_lock(FALSE)
 	user = null
 	set_target(null)
 	. = ..()
 
 /datum/sex_controller/proc/on_target_destroy()
+	clear_knot_lock(FALSE)
 	target = null
+
+/mob/living/proc/rules_knotting()
+	if(client?.prefs)
+		return client.prefs.rules_knotting
+	return TRUE
+
+/mob/living/proc/sexcon_allows_knotting_with(mob/living/partner)
+	return rules_knotting() && (!partner || partner.rules_knotting())
+
+/datum/sex_controller/proc/is_knot_locked()
+	if(!knot_locked_partner)
+		return FALSE
+	if(world.time >= knot_locked_until)
+		clear_knot_lock(FALSE)
+		return FALSE
+	if(QDELETED(knot_locked_partner) || knot_locked_partner.stat == DEAD)
+		clear_knot_lock(FALSE)
+		return FALSE
+	return TRUE
+
+/datum/sex_controller/proc/get_knot_lock_status()
+	if(!is_knot_locked())
+		return null
+	var/remaining = max(1, CEILING((knot_locked_until - world.time) / 10, 1))
+	return "Locked with [knot_locked_partner] ([remaining]s)"
+
+/datum/sex_controller/proc/start_knot_lock(mob/living/partner, duration)
+	if(!partner || partner == user || duration <= 0)
+		return
+	if(is_knot_locked())
+		return
+	knot_locked_partner = partner
+	knot_locked_until = world.time + duration
+	if(partner.sexcon)
+		partner.sexcon.knot_locked_partner = user
+		partner.sexcon.knot_locked_until = max(partner.sexcon.knot_locked_until, knot_locked_until)
+	user.visible_message(span_warning("[user] and [partner] become locked together."))
+
+/datum/sex_controller/proc/clear_knot_lock(show_message = TRUE)
+	var/mob/living/old_partner = knot_locked_partner
+	knot_locked_partner = null
+	knot_locked_until = 0
+	if(old_partner?.sexcon?.knot_locked_partner == user)
+		old_partner.sexcon.knot_locked_partner = null
+		old_partner.sexcon.knot_locked_until = 0
+	if(show_message && old_partner)
+		user.visible_message(span_notice("[user] and [old_partner] separate."))
+
+/datum/sex_controller/proc/tear_knot_lock()
+	var/mob/living/old_partner = knot_locked_partner
+	if(!old_partner)
+		return
+	clear_knot_lock(FALSE)
+	user.visible_message(span_danger("[user] and [old_partner] tear apart!"))
+	user.adjustStaminaLoss(15)
+	old_partner.adjustStaminaLoss(15)
 
 
 /proc/do_thrust_animate(atom/movable/user, atom/movable/target, pixels = 4, time = 2.7)
@@ -637,8 +699,10 @@
 		"manualArousal" = get_manual_arousal_plaintext(),
 		"doUntilFinished" = do_until_finished,
 		"showUnavailableParts" = show_unavailable_part_actions,
+		"allowKnotting" = user.rules_knotting(),
 		"isTargetAdjacent" = !target || user.Adjacent(target),
 		"currentAction" = current_action_name,
+		"knotLockStatus" = get_knot_lock_status(),
 		"canUseManualArousal" = user.sexcon_has_penis(),
 		"actions" = list(),
 		"genitals" = get_genital_panel_data(),
@@ -713,6 +777,11 @@
 		if("toggle_unavailable_parts")
 			show_unavailable_part_actions = !show_unavailable_part_actions
 			return TRUE
+		if("toggle_knotting")
+			if(user.client?.prefs)
+				user.client.prefs.rules_knotting = !user.client.prefs.rules_knotting
+				user.client.prefs.save_character()
+			return TRUE
 		if("toggle_genital_accessibility")
 			toggle_genital_accessibility(params["genital"])
 			return TRUE
@@ -721,6 +790,9 @@
 			return TRUE
 		if("toggle_genital_arousal")
 			set_genital_arousal(params["genital"], params["arousal"])
+			return TRUE
+		if("move_genital_layer")
+			move_genital_layer(params["genital"], params["direction"])
 			return TRUE
 		if("genital_dropdown")
 			handle_genital_dropdown(params["field"], params["value"])
@@ -766,6 +838,7 @@
 			"alwaysAccessible" = human.sexcon_genital_always_accessible(style),
 			"canArouse" = row["can_arouse"] || FALSE,
 			"aroused" = get_genital_arousal_state(style),
+			"layer" = human.genital_layer_rank(style),
 		))
 
 /datum/sex_controller/proc/get_genital_arousal_state(style)
@@ -806,6 +879,12 @@
 		else
 			return
 	update_arousal_appearance()
+
+/datum/sex_controller/proc/move_genital_layer(style, direction)
+	if(!ishuman(user) || !genital_visual_by_style(style))
+		return
+	var/mob/living/carbon/human/human = user
+	human.move_genital_layer(style, text2num("[direction]"))
 
 /datum/sex_controller/proc/get_genital_panel_data()
 	. = list()
@@ -1006,6 +1085,7 @@
 	human.testicles_size = initial(human.testicles_size)
 	human.sexcon_genital_visibility = null
 	human.sexcon_genital_accessibility = null
+	human.genital_layer_order = null
 	human.client?.prefs?.genitalia_boobs = null
 	human.client?.prefs?.genitalia_ass = null
 	human.client?.prefs?.genitalia_cock = null
@@ -1077,6 +1157,9 @@
 /datum/sex_controller/proc/try_stop_current_action()
 	if(!current_action)
 		return
+	if(is_knot_locked())
+		to_chat(user, span_warning("You are still locked together and cannot pull away yet."))
+		return
 	desire_stop = TRUE
 
 /datum/sex_controller/proc/stop_current_action()
@@ -1084,6 +1167,8 @@
 		return
 	var/datum/sex_action/action = SEX_ACTION(current_action)
 	action.on_finish(user, target)
+	if(!is_knot_locked())
+		clear_knot_lock(FALSE)
 	desire_stop = FALSE
 	current_action = null
 
@@ -1117,6 +1202,8 @@
 			break
 		//loc check for proximity instead of move disruption.
 		if(action.check_proximity && !(target in view(1, user)))
+			if(is_knot_locked())
+				tear_knot_lock()
 			if(current_action)
 				stop_current_action()
 			return

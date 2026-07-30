@@ -214,7 +214,11 @@
 	Insectoids are able to emit a burst of pheromones that works as a great support ability.<br /><br /> \
 	-Exoskeleton-<br /><br /> \
 	Insectoids have an hard exoskeleton that grants them slight brute resistance."
-	inherent_actions = list(/datum/action/ability/pheromones)
+	inherent_actions = list(
+		/datum/action/ability/pheromones,
+		/datum/action/ability/spin_web,
+		/datum/action/ability/spin_cocoon,
+	)
 
 /datum/action/ability/pheromones
 	name = "Pheromones"
@@ -448,10 +452,12 @@
 		"Digitigrade" = "digitigrade_1",
 		"Digitigrade 2" = "digitigrade_2",
 	)
-	default_language_holder = /datum/language_holder/xeno
+	default_language_holder = /datum/language_holder/xeno/hybrid
 	burn_mod = 1.05
+	clone_mod = 0.5
 	var/list/action_list = list(
 		/datum/action/ability/activable/xenohybrid_tail_sting,
+		/datum/action/ability/xenohybrid_psychic_whisper,
 	)
 
 /datum/species/xenohybrid/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)

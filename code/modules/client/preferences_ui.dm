@@ -216,6 +216,8 @@
 			data["mapRef"] = map_name
 			data["ai_name"] = ai_name
 			data["gender"] = gender
+			data["xeno_gender"] = xeno_gender
+			data["xenogender"] = xenogender
 			data["physique"] = physique
 			data["species"] = species || "Human"
 			data["human_body_style"] = human_body_style
@@ -232,6 +234,7 @@
 			data["blood_color"] = blood_color
 		if(BACKGROUND_INFORMATION)
 			data["age"] = age
+			data["custom_species_name"] = custom_species_name
 			data["citizenship"] = citizenship
 			data["religion"] = religion
 			data["flavor_text"] = html_decode(flavor_text)
@@ -769,10 +772,16 @@
 			new_age = round(new_age)
 			age = clamp(new_age, AGE_MIN, AGE_MAX)
 
+		if("custom_species_name")
+			custom_species_name = trim(html_encode(params["newValue"]), MAX_NAME_LEN)
+
 		if("toggle_gender")
 			gender = params["newgender"]
 			if(physique == USE_GENDER)
 				update_preview_icon()
+
+		if("xeno_gender")
+			xeno_gender = sanitize_gender(params["newgender"], TRUE, TRUE, NEUTER)
 
 		if("toggle_physique")
 			physique = params["newphysique"]
@@ -1141,7 +1150,7 @@
 			if(!isnum(new_xgender))
 				return
 			new_xgender = round(new_xgender)
-			xenogender = new_xgender
+			xenogender = clamp(new_xgender, 1, 4)
 		if("xeno_edible_jelly_name")
 			var/newValue = params["newValue"]
 			newValue = reject_bad_name(newValue, TRUE)

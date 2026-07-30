@@ -1,3 +1,55 @@
+/datum/action/ability/xenohybrid_psychic_whisper
+	name = "Psychic Whisper"
+	desc = "Send a message directly to a living target in view."
+	action_icon = 'icons/Xeno/actions/shrike.dmi'
+	action_icon_state = "psychic_whisper"
+	use_state_flags = ABILITY_USE_INCAP|ABILITY_USE_LYING|ABILITY_USE_BUCKLED|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF|ABILITY_USE_BUSY|ABILITY_USE_SOLIDOBJECT
+
+/datum/action/ability/xenohybrid_psychic_whisper/action_activate()
+	var/mob/living/carbon/human/human_owner = owner
+	if(!human_owner)
+		return fail_activate()
+	if(!can_use_action(FALSE, NONE, FALSE))
+		return fail_activate()
+
+	var/list/target_list = list()
+	for(var/mob/living/possible_target in view(WORLD_VIEW, human_owner))
+		if(possible_target == human_owner || !possible_target.client)
+			continue
+		target_list += possible_target
+
+	if(!length(target_list))
+		to_chat(human_owner, span_warning("There's nobody nearby to whisper to."))
+		return fail_activate()
+
+	var/mob/living/target = tgui_input_list(human_owner, "Target", "Send a Psychic Whisper to whom?", target_list)
+	if(!target)
+		return fail_activate()
+	if(!(target in view(WORLD_VIEW, human_owner)))
+		to_chat(human_owner, span_warning("[target] is no longer in view."))
+		return fail_activate()
+	if(human_owner.stat)
+		to_chat(human_owner, span_warning("You cannot do this while not conscious."))
+		return fail_activate()
+
+	var/msg = tgui_input_text(human_owner, desc, name, "", MAX_MESSAGE_LEN, multiline = TRUE, encode = FALSE)
+	msg = copytext_char(trim(sanitize(msg)), 1, MAX_MESSAGE_LEN)
+	if(!msg)
+		return fail_activate()
+	if(human_owner.stat)
+		to_chat(human_owner, span_warning("You cannot do this while not conscious."))
+		return fail_activate()
+	if(!(target in view(WORLD_VIEW, human_owner)))
+		to_chat(human_owner, span_warning("[target] is no longer in view."))
+		return fail_activate()
+
+	log_directed_talk(human_owner, target, msg, LOG_SAY, "psychic whisper")
+	to_chat(target, span_psychicin("You hear a strange, alien voice in your head. <i>\"[msg]\"</i>"))
+	to_chat(human_owner, span_psychicout("You said: \"[msg]\" to [target]"))
+	message_admins("[human_owner] has sent [target] this psychic message: \"[msg]\" at [ADMIN_VERBOSEJMP(human_owner)].")
+	succeed_activate()
+	add_cooldown()
+
 /datum/action/ability/activable/xenohybrid_tail_sting
 	name = "Tail Sting"
 	action_icon = 'ntf_modular/icons/Xeno/actions.dmi'

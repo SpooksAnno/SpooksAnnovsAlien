@@ -165,6 +165,7 @@
 	ears = pick(GLOB.ears_list - "None")
 	horns = pick(GLOB.horns_list - "None")
 	wings = pick(GLOB.wings_list - "None")
+	spines = pick(GLOB.spines_list - "None")
 	synth_antenna = pick(GLOB.synth_antennas_list - "None")
 	var/list/leg_options = digitigrade_leg_options()
 	if(length(leg_options) > 1)
@@ -174,7 +175,7 @@
 
 /datum/preferences/proc/character_debug_summary()
 	var/marking_summary = islist(body_markings) ? length(body_markings) : "invalid"
-	return "species=[species]; gender=[gender]; synth=[synthetic_type]/[synthetic_body_base]; robot=[robot_body_base]/[robot_head_base]; tail=[tail]; snout=[snout]; ears=[ears]; horns=[horns]; wings=[wings]; antenna=[synth_antenna]; fluff=[fluff]; legs=[digitigrade_legs]; markings=[marking_summary]"
+	return "species=[species]; gender=[gender]; synth=[synthetic_type]/[synthetic_body_base]; robot=[robot_body_base]/[robot_head_base]; tail=[tail]; snout=[snout]; ears=[ears]; horns=[horns]; spines=[spines]; wings=[wings]; antenna=[synth_antenna]; fluff=[fluff]; legs=[digitigrade_legs]; markings=[marking_summary]"
 
 /datum/preferences/proc/sanitize_character_appearance_for_render()
 	. = FALSE
@@ -206,6 +207,10 @@
 	horns_color_secondary = sanitize_hexcolor(horns_color_secondary, 6, TRUE, "#555555")
 	horns_color_tertiary = sanitize_hexcolor(horns_color_tertiary, 6, TRUE, "#555555")
 	horns_emissive = sanitize_character_creator_emissive_list(horns_emissive)
+
+	spines = sanitize_inlist(spines, GLOB.spines_list, initial(spines))
+	if(!spines)
+		spines = initial(spines)
 
 	wings = sanitize_inlist(wings, GLOB.wings_list, initial(wings))
 	wings_color = sanitize_hexcolor(wings_color, 6, TRUE, "#6BA36B")
@@ -317,6 +322,7 @@
 	character.snout = initial(character.snout)
 	character.ears = initial(character.ears)
 	character.horns = initial(character.horns)
+	character.spines = initial(character.spines)
 	character.wings = initial(character.wings)
 	character.synth_antenna = initial(character.synth_antenna)
 	character.fluff = initial(character.fluff)
@@ -361,6 +367,7 @@
 	character.exploit_record = exploit_record
 
 	character.age = age
+	character.custom_species_name = custom_species_name
 	character.gender = gender
 	character.physique = get_physique()
 	character.ethnicity = ethnicity

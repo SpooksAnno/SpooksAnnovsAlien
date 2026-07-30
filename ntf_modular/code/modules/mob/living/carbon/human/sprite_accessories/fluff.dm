@@ -1,6 +1,4 @@
 /datum/sprite_accessory/fluff
-	// Future work: re-enable these after porting an organ/bodypart overlay anchor for chest fluff.
-	// Drawing these as direct mob overlays misaligns the larger SPLURT moth fluff sprites.
 	icon = 'ntf_modular/icons/mob/sprite_accessories/neck_fluff.dmi'
 	var/icon_prefix = "m_fluff"
 	var/color_src = ACCESSORY_COLOR_NONE
@@ -46,7 +44,9 @@
 /datum/sprite_accessory/fluff/moth
 	icon = 'ntf_modular/icons/mob/sprite_accessories/moth_fluff.dmi'
 	color_count = 1
-	center = FALSE
+	center = TRUE
+	dimension_x = 45
+	dimension_y = 34
 	pixel_x_offset = 0
 	render_layers = list(BODY_OVERLAY_LAYER_ADJ)
 

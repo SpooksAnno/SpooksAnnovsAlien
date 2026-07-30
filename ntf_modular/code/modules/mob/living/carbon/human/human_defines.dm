@@ -42,6 +42,7 @@
 /// Runtime genital display/access overrides from the mob interaction panel.
 	var/list/sexcon_genital_visibility
 	var/list/sexcon_genital_accessibility
+	var/list/genital_layer_order
 ///For xeno healing bone repair
 	var/xeno_heals = 0
 	// Xenomorph that is hauling us if we are hauled

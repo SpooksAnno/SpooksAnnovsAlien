@@ -28,44 +28,80 @@
 
 /mob/living/carbon/xenomorph/verb/swapgender()
 	set name = "Swap Gender"
-	set desc = "Swap between xeno genders in an instant, nothing compared to evolving. Some may not have textures, PR it yourself."
+	set desc = "Swap between xeno anatomy and gender in an instant, nothing compared to evolving. Some may not have textures, PR it yourself."
 	set category = "Alien"
 
 	update_xeno_gender(src, TRUE)
+
+/mob/living/carbon/xenomorph/proc/has_xeno_penis()
+	if(!client?.prefs)
+		return gender == MALE
+	return client?.prefs?.xenogender >= 3
+
+/mob/living/carbon/xenomorph/proc/has_xeno_vagina()
+	if(!client?.prefs)
+		return gender == FEMALE
+	return client?.prefs?.xenogender == 2 || client?.prefs?.xenogender == 4
 
 /mob/living/carbon/xenomorph/proc/update_xeno_gender(mob/living/carbon/xenomorph/user = src, swapping = FALSE)
 	remove_overlay(GENITAL_LAYER)
 	if(QDELETED(user)||QDELETED(src))
 		return
 	var/xgen = client?.prefs?.xenogender
+	var/actual_gender = client?.prefs?.xeno_gender || gender
 	if(swapping)
 		if(!COOLDOWN_FINISHED(src, gender_swap_cooldown))
 			to_chat(src, span_xenonotice("You need to wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, gender_swap_cooldown))] more."))
 			return
-		var/gchoice = tgui_input_list(src, "Select a new role to take.", "Gender Selection", list(
+		var/gchoice = tgui_input_list(src, "Select a new anatomy to display.", "Anatomy Selection", list(
+			"None",
+			"Vagina",
+			"Penis",
+			"Both",
+			"cancel",
+		), "cancel")
+		if(gchoice == "cancel")
+			return
+		var/identity_choice = tgui_input_list(src, "Select the gender other systems should consider you.", "Gender Selection", list(
 			NEUTER,
 			FEMALE,
 			MALE,
-			"Futa",
+			PLURAL,
 			"cancel",
 		), "cancel")
-		if(xgen == gchoice)
+		if(identity_choice == "cancel")
 			return
-		if(gchoice == "cancel")
+		if(xgen == gchoice && actual_gender == identity_choice)
 			return
 		do_jitter_animation()
 		xgen = gchoice
+		actual_gender = identity_choice
 		if(!(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES))
 			COOLDOWN_START(src, gender_swap_cooldown, 5 MINUTES)
 	switch(xgen) //convert string to number
 		if(NEUTER)
 			xgen = 1
+		if("None")
+			xgen = 1
 		if(FEMALE)
+			xgen = 2
+		if("Vagina")
 			xgen = 2
 		if(MALE)
 			xgen = 3
+		if("Penis")
+			xgen = 3
 		if("Futa")
 			xgen = 4
+		if("Both")
+			xgen = 4
+	var/anatomy_default_gender = NEUTER
+	switch(xgen)
+		if(2, 4)
+			anatomy_default_gender = FEMALE
+		if(3)
+			anatomy_default_gender = MALE
+	actual_gender = sanitize_gender(actual_gender, TRUE, TRUE, anatomy_default_gender)
 	genital_overlay.layer = layer + 0.3
 	genital_overlay.vis_flags |= VIS_HIDE
 	genital_overlay.icon = src.icon
@@ -74,25 +110,23 @@
 	switch(xgen)
 		if(1) //blank
 			genital_overlay.icon_state = null
-			gender=NEUTER
 			if(swapping)
 				user.balloon_alert(user, "None")
 		if(2)
 			genital_overlay.icon_state = "[icon_state]_female"
-			gender=FEMALE
 			if(swapping)
-				user.balloon_alert(user, "Female")
+				user.balloon_alert(user, "Vagina")
 		if(3)
 			genital_overlay.icon_state = "[icon_state]_male"
-			gender=MALE
 			if(swapping)
-				user.balloon_alert(user, "Male")
+				user.balloon_alert(user, "Penis")
 		if(4)
 			genital_overlay.icon_state = "[icon_state]_futa"
-			gender=FEMALE
 			if(swapping)
-				user.balloon_alert(user, "Futa")
+				user.balloon_alert(user, "Both")
+	gender = actual_gender
 	user.client?.prefs?.xenogender = xgen
+	user.client?.prefs?.xeno_gender = actual_gender
 	if(swapping)
 		user.client.prefs.save_character()
 		user.client.prefs.save_preferences()

@@ -219,6 +219,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/blood_color = "#A10808"
 
 	//Lore
+	var/custom_species_name = ""
 	var/citizenship = "Phantom City (Earth)"
 	var/religion = "None"
 	var/flavor_text = ""
@@ -229,9 +230,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/profile_pic = ""
 	var/nsfwprofile_pic = ""
 	var/xenoprofile_pic = ""
+	var/xeno_gender = "use_anatomy"
 	var/xenogender = 1
 	var/harmful_sex_flags = HARMFUL_SEX_ALL
 	var/quick_sex_flags = QUICK_SEX_ALL
+	var/rules_knotting = TRUE
 	var/burst_screams_enabled = TRUE
 
 	var/list/exp = list()

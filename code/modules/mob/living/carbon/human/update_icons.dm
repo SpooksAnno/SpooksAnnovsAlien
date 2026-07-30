@@ -825,7 +825,14 @@ GLOBAL_LIST_EMPTY(damage_icon_parts)
 		head.screen_loc = ui_head
 		client.screen += head
 
-	overlays_standing[HEAD_LAYER] = head.make_worn_icon(species_type = species.name, slot_name = slot_head_str, default_icon = 'icons/mob/clothing/headwear/head_0.dmi', default_layer = HEAD_LAYER)
+	var/snouted_head_icon
+	if(snout && snout != "None")
+		var/snouted_icon_file = head.get_snouted_worn_icon_file(slot_head_str)
+		var/worn_state = head.get_worn_icon_state(slot_head_str, FALSE)
+		if(snouted_icon_file && worn_state && icon_exists(snouted_icon_file, worn_state))
+			snouted_head_icon = snouted_icon_file
+
+	overlays_standing[HEAD_LAYER] = head.make_worn_icon(species_type = species.name, slot_name = slot_head_str, default_icon = 'icons/mob/clothing/headwear/head_0.dmi', default_layer = HEAD_LAYER, icon_file_override = snouted_head_icon)
 
 	apply_overlay(HEAD_LAYER)
 	species?.update_inv_head(src)

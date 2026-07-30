@@ -5,6 +5,11 @@ Imports
 	group = "Imports"
 	containertype = /obj/structure/closet/crate/weapon
 
+/datum/supply_packs/imports/fishing
+	name = "Fishing Tackle Kit"
+	contains = list(/obj/item/storage/box/fishing)
+	cost = 7
+
 /datum/supply_packs/imports/m41a
 	name = "PR-11 Pulse Rifle"
 	contains = list(/obj/item/weapon/gun/rifle/m41a)

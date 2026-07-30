@@ -32,6 +32,7 @@
 	update_snout()
 	update_ears()
 	update_horns()
+	update_spines()
 	update_fluff()
 	update_synth_antenna()
 
@@ -81,6 +82,11 @@
 	if(direction == NORTH)
 		return ACCESSORY_FACE_TOP_LAYER
 	return accessory_face_draw_layer(render_layer)
+
+/proc/accessory_spines_draw_layer(render_layer, direction)
+	if(direction == NORTH && render_layer != BODY_OVERLAY_LAYER_BEHIND)
+		return ACCESSORY_FACE_TOP_LAYER
+	return accessory_body_draw_layer(render_layer)
 
 /proc/accessory_antenna_draw_layer(render_layer, direction)
 	if(direction == NORTH)
@@ -306,6 +312,28 @@
 
 	overlays_standing[ACCESSORY_HORNS_LAYER] = horns_layers
 	apply_overlay(ACCESSORY_HORNS_LAYER)
+
+/mob/living/carbon/human/proc/update_spines()
+	remove_overlay(ACCESSORY_SPINES_LAYER)
+
+	if(!spines || spines == "None")
+		return
+
+	var/datum/sprite_accessory/spines/spines_data = GLOB.spines_list[spines]
+	if(!spines_data || !spines_data.icon_state)
+		return
+
+	var/spines_render_color = accessory_render_color(spines_data, body_color)
+
+	var/list/spines_layers = list()
+	for(var/render_layer in spines_data.render_layers)
+		add_accessory_color_layers(spines_layers, spines_data, render_layer, spines_render_color, null, null, null, accessory_spines_draw_layer(render_layer, dir))
+
+	if(!length(spines_layers))
+		return
+
+	overlays_standing[ACCESSORY_SPINES_LAYER] = spines_layers
+	apply_overlay(ACCESSORY_SPINES_LAYER)
 
 /mob/living/carbon/human/proc/update_fluff()
 	remove_overlay(ACCESSORY_FLUFF_LAYER)

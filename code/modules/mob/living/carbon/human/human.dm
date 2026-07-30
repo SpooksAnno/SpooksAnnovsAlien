@@ -691,6 +691,8 @@
 	if(!species)
 		set_species()
 
+	if(custom_species_name)
+		return custom_species_name
 	return species.name
 
 

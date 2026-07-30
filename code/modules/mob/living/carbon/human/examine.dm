@@ -176,7 +176,7 @@
 
 	msg += separator_hr("Status")
 
-	msg += "[t_He] [t_is] a [species.name].\n"
+	msg += "[t_He] [t_is] \a [get_species()].\n"
 
 	//jitters
 	if(stat != DEAD)

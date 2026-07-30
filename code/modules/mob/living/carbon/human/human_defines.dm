@@ -68,6 +68,8 @@
 
 	///Character's age (pure fluff)
 	var/age = 30
+	///Custom species display name. Mechanics still use the actual species datum.
+	var/custom_species_name = ""
 
 	/// Which body type to use
 	var/physique = MALE

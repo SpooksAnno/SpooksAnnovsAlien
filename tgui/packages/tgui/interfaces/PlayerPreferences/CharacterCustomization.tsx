@@ -42,6 +42,8 @@ export const CharacterCustomization = (props) => {
   const {
     random_name,
     gender,
+    xeno_gender,
+    xenogender,
     physique,
     r_hair,
     g_hair,
@@ -585,6 +587,19 @@ export const CharacterCustomization = (props) => {
     );
   };
   const genders = ['male', 'female', 'plural', 'neuter'];
+  const xenoAnatomyLabels = ['None', 'Vagina', 'Penis', 'Both'];
+  const xenoAnatomyValues = {
+    None: 1,
+    Vagina: 2,
+    Penis: 3,
+    Both: 4,
+  };
+  const xenoAnatomyNames = {
+    1: 'None',
+    2: 'Vagina',
+    3: 'Penis',
+    4: 'Both',
+  };
   const physiques = ['use_gender', 'male', 'female'];
   const genderToName = {
     male: 'Male',
@@ -680,6 +695,26 @@ export const CharacterCustomization = (props) => {
                 displayText={genderToName[gender]}
                 onSelected={(selected) =>
                   act('toggle_gender', { newgender: nameToGender[selected] })
+                }
+              />
+            </LabeledList.Item>
+            <LabeledList.Item label={'Xeno Gender'}>
+              <Dropdown
+                options={genders.map((thisgender) => genderToName[thisgender])}
+                selected={genderToName[xeno_gender]}
+                displayText={genderToName[xeno_gender]}
+                onSelected={(selected) =>
+                  act('xeno_gender', { newgender: nameToGender[selected] })
+                }
+              />
+            </LabeledList.Item>
+            <LabeledList.Item label={'Xeno Anatomy'}>
+              <Dropdown
+                options={xenoAnatomyLabels}
+                selected={xenoAnatomyNames[xenogender] ?? 'None'}
+                displayText={xenoAnatomyNames[xenogender] ?? 'None'}
+                onSelected={(selected) =>
+                  act('xenogender', { newValue: xenoAnatomyValues[selected] })
                 }
               />
             </LabeledList.Item>
